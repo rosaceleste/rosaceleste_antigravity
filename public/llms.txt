@@ -1,0 +1,32 @@
+# Rosaceleste
+
+> Macramé consciente desde Colombia. Cursos, productos y experiencias de bienestar a través de la práctica creativa del tejido a mano.
+
+## Sobre Nosotros
+Rosaceleste es un proyecto liderado por Daniela Sierra, artista visual y facilitadora de bienestar creativo. A través del macramé, creamos espacios para pausar, reconectar y habitarse desde la calma.
+
+## Oferta Principal
+
+### Productos (/productos)
+Ofrecemos piezas de macramé hechas a mano con materiales sostenibles:
+- **Decoración de Mesa**: Portavasos, individuales, portaservilletas.
+- **Decoración de Pared**: Telares, tapices, espejos, lámparas.
+- **Uso Personal**: Bolsos, chalecos.
+- **Piezas Avanzadas**: Cortinas, hamacas, biombos.
+
+### Clases y Talleres (/clases)
+Cursos presenciales y virtuales para aprender la técnica del macramé, desde nudos básicos hasta proyectos avanzados. Enfocados en la meditación activa y la creatividad.
+
+### Experiencias (/experiencias)
+Eventos grupales y retiros de bienestar donde el tejido es el hilo conductor para la conexión humana y la relajación.
+
+## Contacto
+- **WhatsApp**: +57 301 787 0521
+- **Email**: rosacelestemacrame@gmail.com
+- **Ubicación**: Guadalajara de Buga, Colombia
+
+## Enlaces
+- [Inicio](https://rosaceleste.com)
+- [Catálogo](https://rosaceleste.com/productos)
+- [Clases](https://rosaceleste.com/clases)
+- [Experiencias](https://rosaceleste.com/experiencias)

@@ -1,0 +1,129 @@
+@import "tailwindcss";
+@import "@heroui/styles";
+
+
+
+:root {
+  /* System: Warmth & Approachability */
+  
+  /* Base */
+  --background: #FAFAFA;  /* Neutral Light Canvas */
+  --foreground: #1A1A1A;  /* Neutral Dark Text */
+
+  /* Brand Colors */
+  --primary: #2C5F5D;     /* Deep Teal */
+  --primary-foreground: #FFFFFF;
+  
+  --secondary: #F5F1E8;   /* Soft Beige */
+  --secondary-foreground: #2C5F5D;
+  
+  --accent: #C97D60;      /* Terracotta */
+  --accent-foreground: #FFFFFF;
+  
+  /* UI Elements */
+  --muted: #4A4A4A;       /* Muted Text */
+  --muted-foreground: #FAFAFA;
+  
+  --border: rgba(0, 0, 0, 0.08); /* Subtle separation */
+  --input: rgba(0, 0, 0, 0.08);
+  --ring: #2C5F5D;        /* Focus ring */
+  
+  --card: #FFFFFF;        /* Cards */
+  --card-foreground: #1A1A1A;
+  
+  --radius: 0.5rem;       /* 8px default */
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.animate-gradient {
+  background-size: 200% auto;
+  animation: gradient 3s ease infinite alternate;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes marquee-reverse {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes marquee-vertical {
+  0% {
+    transform: translateY(0%);
+  }
+
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes marquee-vertical-reverse {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee var(--duration) linear infinite;
+}
+
+.animate-marquee-reverse {
+  animation: marquee-reverse var(--duration) linear infinite;
+}
+
+.animate-marquee-vertical {
+  animation: marquee-vertical var(--duration) linear infinite;
+}
+
+.animate-marquee-vertical-reverse {
+  animation: marquee-vertical-reverse var(--duration) linear infinite;
+}
+
+@keyframes shimmer {
+
+  0%,
+  90%,
+  100% {
+    background-position: calc(-100% - var(--shimmer-width)) 0;
+  }
+
+  30%,
+  60% {
+    background-position: calc(100% + var(--shimmer-width)) 0;
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 8s infinite;
+}

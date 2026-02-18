@@ -1,0 +1,111 @@
+﻿
+> rosaceleste-app@0.1.0 build
+> next build
+
+node.exe : [@sentry/nextjs] DEPRECATION WARNING: 
+automaticVercelMonitors is deprecated and will be 
+removed in a future version. Use 
+webpack.automaticVercelMonitors instead. (Not supported 
+with Turbopack.)
+At line:1 char:1
++ & "C:\Program Files\nodejs/node.exe" 
+"C:\Users\manue\AppData\Roaming\ ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: 
+([@sentry/nex    tjs...ith Turbopack.):String) [], 
+RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+[@sentry/nextjs] DEPRECATION WARNING: 
+reactComponentAnnotation is deprecated and will be 
+removed in a future version. Use 
+webpack.reactComponentAnnotation instead. (Not 
+supported with Turbopack.)
+[@sentry/nextjs] ACTION REQUIRED: To instrument 
+navigations, the Sentry SDK requires you to export an 
+`onRouterTransitionStart` hook from your 
+`instrumentation-client.(js|ts)` file. You can do so by 
+adding `export const onRouterTransitionStart = 
+Sentry.captureRouterTransitionStart;` to the file.
+Γû▓ Next.js 16.1.6 (Turbopack)
+- Environments: .env.local
+- Experiments (use with caution):
+  ┬╖ clientTraceMetadata
+
+  Creating an optimized production build ...
+[@sentry/nextjs] DEPRECATION WARNING: 
+automaticVercelMonitors is deprecated and will be 
+removed in a future version. Use 
+webpack.automaticVercelMonitors instead. (Not supported 
+with Turbopack.)
+[@sentry/nextjs] DEPRECATION WARNING: 
+reactComponentAnnotation is deprecated and will be 
+removed in a future version. Use 
+webpack.reactComponentAnnotation instead. (Not 
+supported with Turbopack.)
+[@sentry/nextjs] ACTION REQUIRED: To instrument 
+navigations, the Sentry SDK requires you to export an 
+`onRouterTransitionStart` hook from your 
+`instrumentation-client.(js|ts)` file. You can do so by 
+adding `export const onRouterTransitionStart = 
+Sentry.captureRouterTransitionStart;` to the file.
+Γ£ô Compiled successfully in 17.7s
+  Running next.config.js provided runAfterProductionCompile ...
+Γ£ô Completed runAfterProductionCompile in 623ms
+  Running TypeScript ...
+  Collecting page data using 11 workers ...
+RESEND_API_KEY is missing. Emails will not be sent.
+  Generating static pages using 11 workers (0/16) ...
+RESEND_API_KEY is missing. Emails will not be sent.
+Error in /api/products: Error: Dynamic server usage: 
+Route /api/products couldn't be rendered statically 
+because it used `cookies`. See more info here: 
+https://nextjs.org/docs/messages/dynamic-server-error
+    at E (C:\Users\manue\AI Product Maker\Google Antigra
+vity\Rosaceleste\.next\server\chunks\[root-of-the-server
+]__71e0e3b9._.js:17:30713)
+    at p (C:\Users\manue\AI Product Maker\Google Antigra
+vity\Rosaceleste\.next\server\chunks\_6ed1c089._.js:2:10
+501)
+    at g (C:\Users\manue\AI Product Maker\Google Antigra
+vity\Rosaceleste\.next\server\chunks\_6ed1c089._.js:20:6
+9)
+    at E (C:\Users\manue\AI Product Maker\Google Antigra
+vity\Rosaceleste\.next\server\chunks\[root-of-the-server
+]__4afcc1b3._.js:2:1204) {
+  description: "Route /api/products couldn't be 
+rendered statically because it used `cookies`. See more 
+info here: 
+https://nextjs.org/docs/messages/dynamic-server-error",
+  digest: 'DYNAMIC_SERVER_USAGE'
+}
+  Generating static pages using 11 workers (4/16) 
+  Generating static pages using 11 workers (8/16) 
+  Generating static pages using 11 workers (12/16) 
+Γ£ô Generating static pages using 11 workers (16/16) in 1234.6ms
+  Finalizing page optimization ...
+
+Route (app)
+Γöî ╞Æ /
+Γö£ Γùï /_not-found
+Γö£ Γùï /admin
+Γö£ ╞Æ /api/admin/migrate
+Γö£ ╞Æ /api/images/[fileId]
+Γö£ ╞Æ /api/join-community
+Γö£ ╞Æ /api/products
+Γö£ Γùï /clases
+Γö£ Γùï /experiencias
+Γö£ Γùï /privacidad
+Γö£ ╞Æ /productos
+Γö£ ΓùÅ /productos/[slug]
+Γö£ Γùï /robots.txt
+Γö£ ╞Æ /sitemap.xml
+Γö£ Γùï /sobre-nosotros
+Γöö Γùï /terminos
+
+
+Γùï  (Static)   prerendered as static content
+ΓùÅ  (SSG)      prerendered as static HTML (uses generateStaticParams)
+╞Æ  (Dynamic)  server-rendered on demand
+
