@@ -39,11 +39,10 @@ export default async function ProductsPage() {
             <Container>
                 <header className="flex flex-col gap-4 mb-16 text-center max-w-3xl mx-auto">
                     <h1 className="text-4xl md:text-6xl font-serif font-bold text-[#2C5F5D] tracking-tight">
-                        Catálogo de Productos
+                        Catálogo de productos
                     </h1>
-                    <p className="text-lg text-muted-foreground leading-relaxed">
-                        Piezas únicas tejidas a mano con paciencia y consciencia.
-                        Explora nuestra colección y encuentra el complemento ideal para tu hogar.
+                    <p className="text-muted text-sm md:text-base text-center max-w-2xl mx-auto mt-3 mb-8 px-4">
+                        Cada pieza se teje cuidadosamente una vez realices el abono del 50% del valor total y tiene un período de 7 a 25 días hábiles de entrega dependiendo del proyecto y contratiempos con proveedores.
                     </p>
                 </header>
 

@@ -1,0 +1,40 @@
+﻿--- TARGET PRODUCTS DATA ---
+[
+  {
+    "id": "0e2ff5cb-7107-418c-8f02-a851f4b16d22",
+    "name": "Tapiz Montaña",
+    "slug": "tapiz-montana",
+    "image_url": [
+      "https://erqgcpwmulrxlfmzsffi.supabase.co/storage/v1/object/public/products/tapiz-montana-1.jpg"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "39e7756b-a9a0-4922-a0f8-82330f7857bd",
+    "name": "Portavasos corazón",
+    "slug": "portavasos-corazon",
+    "image_url": [
+      "https://erqgcpwmulrxlfmzsffi.supabase.co/storage/v1/object/public/products/portavasos-corazon-1.jpg"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "2a42ee42-fa65-4ada-a89a-cd87e8bd3db9",
+    "name": "Chalecos",
+    "slug": "chalecos",
+    "image_url": [
+      "https://erqgcpwmulrxlfmzsffi.supabase.co/storage/v1/object/public/products/chalecos-1.jpg"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "33b0e1b4-cafe-4b04-b6f4-302fa3b49e61",
+    "name": "Individuales redondos ancestral",
+    "slug": "individuales-redondos-ancestral",
+    "image_url": [
+      "https://erqgcpwmulrxlfmzsffi.supabase.co/storage/v1/object/public/products/individuales-redondos-ancestral-1.jpg"
+    ],
+    "is_active": true
+  }
+]
+---------------------------

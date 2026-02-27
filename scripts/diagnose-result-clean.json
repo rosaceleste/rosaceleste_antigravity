@@ -1,0 +1,106 @@
+{
+  "targetProducts": [
+    {
+      "id": "0e2ff5cb-7107-418c-8f02-a851f4b16d22",
+      "name": "Tapiz Montaña",
+      "slug": "tapiz-montana",
+      "description": "120cm x 90cm",
+      "price": 250000,
+      "category": "decoracion_pared",
+      "subcategory": null,
+      "image_url": [
+        "https://erqgcpwmulrxlfmzsffi.supabase.co/storage/v1/object/public/products/tapiz-montana-1.jpg"
+      ],
+      "production_time_days": 7,
+      "is_featured": false,
+      "is_active": true,
+      "created_at": "2026-02-18T18:36:58.508883+00:00",
+      "updated_at": "2026-02-18T18:45:24.363+00:00"
+    },
+    {
+      "id": "39e7756b-a9a0-4922-a0f8-82330f7857bd",
+      "name": "Portavasos corazón",
+      "slug": "portavasos-corazon",
+      "description": "15cm de diámetro.",
+      "price": 15000,
+      "category": "decoracion_mesa",
+      "subcategory": null,
+      "image_url": [
+        "https://erqgcpwmulrxlfmzsffi.supabase.co/storage/v1/object/public/products/portavasos-corazon-1.jpg"
+      ],
+      "production_time_days": 7,
+      "is_featured": false,
+      "is_active": true,
+      "created_at": "2026-02-18T18:36:57.490167+00:00",
+      "updated_at": "2026-02-18T18:45:22.407+00:00"
+    },
+    {
+      "id": "fb73d357-3f81-4fcb-8bd9-07bc2732f98b",
+      "name": "Individuales redondos",
+      "slug": "individuales-redondos",
+      "description": "30cm de diámetro. Juego de 4 puestos con portavasos",
+      "price": 305000,
+      "category": "decoracion_mesa",
+      "subcategory": null,
+      "image_url": [
+        "https://erqgcpwmulrxlfmzsffi.supabase.co/storage/v1/object/public/products/individuales-redondos-1.jpg"
+      ],
+      "production_time_days": 7,
+      "is_featured": false,
+      "is_active": true,
+      "created_at": "2026-02-18T18:36:56.859179+00:00",
+      "updated_at": "2026-02-18T18:42:38.778+00:00"
+    },
+    {
+      "id": "2a42ee42-fa65-4ada-a89a-cd87e8bd3db9",
+      "name": "Chalecos",
+      "slug": "chalecos",
+      "description": "Medidas variables.",
+      "price": 85000,
+      "category": "uso_personal",
+      "subcategory": null,
+      "image_url": [
+        "https://erqgcpwmulrxlfmzsffi.supabase.co/storage/v1/object/public/products/chalecos-1.jpg"
+      ],
+      "production_time_days": 7,
+      "is_featured": false,
+      "is_active": true,
+      "created_at": "2026-02-18T18:37:00.933524+00:00",
+      "updated_at": "2026-02-18T18:45:18.718+00:00"
+    },
+    {
+      "id": "33b0e1b4-cafe-4b04-b6f4-302fa3b49e61",
+      "name": "Individuales redondos ancestral",
+      "slug": "individuales-redondos-ancestral",
+      "description": "30cm de diámetro. Juego de 4 puestos",
+      "price": 250000,
+      "category": "decoracion_mesa",
+      "subcategory": null,
+      "image_url": [
+        "https://erqgcpwmulrxlfmzsffi.supabase.co/storage/v1/object/public/products/individuales-redondos-ancestral-1.jpg"
+      ],
+      "production_time_days": 7,
+      "is_featured": false,
+      "is_active": true,
+      "created_at": "2026-02-18T18:36:57.275843+00:00",
+      "updated_at": "2026-02-18T18:45:20.612+00:00"
+    }
+  ],
+  "structureExample": {
+    "id": "d46e50db-de91-4ba8-9d55-708a6de5f0f0",
+    "name": "Espejo Mandala",
+    "slug": "espejo-mandala",
+    "description": "83cm de diamétro total",
+    "price": 260000,
+    "category": "decoracion_pared",
+    "subcategory": null,
+    "image_url": [
+      "https://erqgcpwmulrxlfmzsffi.supabase.co/storage/v1/object/public/products/espejo-mandala-1.jpg"
+    ],
+    "production_time_days": 7,
+    "is_featured": false,
+    "is_active": true,
+    "created_at": "2026-02-18T18:37:00.543344+00:00",
+    "updated_at": "2026-02-18T18:42:26.997+00:00"
+  }
+}

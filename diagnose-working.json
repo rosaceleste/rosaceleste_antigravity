@@ -1,0 +1,13 @@
+﻿--- WORKING PRODUCT DATA ---
+[
+  {
+    "id": "3de41aba-7659-4311-9055-a5c2a7fa420d",
+    "name": "Cojín granito",
+    "slug": "cojin-granito",
+    "image_url": [
+      "https://erqgcpwmulrxlfmzsffi.supabase.co/storage/v1/object/public/products/cojin-granito-1.jpg"
+    ],
+    "is_active": true
+  }
+]
+---------------------------

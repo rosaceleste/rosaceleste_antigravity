@@ -1,0 +1,52 @@
+﻿--- WORKING HEADERS ---
+{
+  "date": "Fri, 27 Feb 2026 16:36:13 GMT",
+  "content-type": "image/jpeg",
+  "content-length": "5986077",
+  "connection": "keep-alive",
+  "server": "cloudflare",
+  "cf-ray": "9d491987db66f7b0-BOG",
+  "cf-cache-status": "MISS",
+  "accept-ranges": "bytes",
+  "access-control-allow-origin": "*",
+  "cache-control": "max-age=3600",
+  "etag": "\"241b01456ed22c5f34a3cb8a0e50d642-2\"",
+  "last-modified": "Wed, 18 Feb 2026 18:42:15 GMT",
+  "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+  "vary": "Accept-Encoding",
+  "sb-gateway-mode": "direct",
+  "sb-gateway-version": "1",
+  "sb-project-ref": "erqgcpwmulrxlfmzsffi",
+  "sb-request-id": "019c9ff5-30f8-74e0-a31c-b56d2faab914",
+  "x-robots-tag": "none",
+  "set-cookie": [
+    "__cf_bm=VxtrWE65qXpOC5fMGgxzgy_p_GNzRVLDtHx_X7iTvUI-1772210173-1.0.1.1-DKr0TsLtcO_7Ry9hIopL4MqPJkF6ggPAJIJ8w.28p9GFLAjydga1baFLqEVjS3berBYrvtTZbxgzD6TymR7kwYS3527sUUgDu7cPtzcQH5w; path=/; expires=Fri, 27-Feb-26 17:06:13 GMT; domain=.supabase.co; HttpOnly; Secure"
+  ],
+  "alt-svc": "h3=\":443\"; ma=86400"
+}
+--- BROKEN HEADERS ---
+{
+  "date": "Fri, 27 Feb 2026 16:36:15 GMT",
+  "content-type": "image/jpeg",
+  "content-length": "1473175",
+  "connection": "keep-alive",
+  "server": "cloudflare",
+  "cf-ray": "9d491992cb91f7a8-BOG",
+  "cf-cache-status": "MISS",
+  "accept-ranges": "bytes",
+  "access-control-allow-origin": "*",
+  "cache-control": "max-age=3600",
+  "etag": "\"33733bef2b0f54f166c819fa83dad17b\"",
+  "last-modified": "Wed, 18 Feb 2026 18:45:25 GMT",
+  "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+  "vary": "Accept-Encoding",
+  "sb-gateway-mode": "direct",
+  "sb-gateway-version": "1",
+  "sb-project-ref": "erqgcpwmulrxlfmzsffi",
+  "sb-request-id": "019c9ff5-3833-7e17-a7db-ba0a640dde48",
+  "x-robots-tag": "none",
+  "set-cookie": [
+    "__cf_bm=GiWyCy_SaOe0OH2f8vt8W7M2P5eGvQ.TLnoESctYWE4-1772210175-1.0.1.1-uOF4jZZtBZKS6KuQLJuFgGY7xeYQYs6w9sJMMxa4bh2c925G8QD88VMoNIW25VFFa5Q1QME4F_Q1m6ktWdm1BKNwzDUhDyQ1ACp3SJdqKbs; path=/; expires=Fri, 27-Feb-26 17:06:15 GMT; domain=.supabase.co; HttpOnly; Secure"
+  ],
+  "alt-svc": "h3=\":443\"; ma=86400"
+}

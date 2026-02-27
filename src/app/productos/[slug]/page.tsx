@@ -24,7 +24,7 @@ export async function generateMetadata(
 
     const { data: product } = await supabase
         .from('products')
-        .select('name, description, images')
+        .select('name, description, image_url')
         .eq('slug', slug)
         .eq('is_active', true)
         .single()
@@ -36,8 +36,8 @@ export async function generateMetadata(
     }
 
     const previousImages = (await parent).openGraph?.images || []
-    const productImages = product.images && product.images.length > 0
-        ? product.images.map((img: string) => ({ url: img }))
+    const productImages = product.image_url && product.image_url.length > 0
+        ? product.image_url.map((img: string) => ({ url: img }))
         : previousImages
 
     return {
@@ -92,7 +92,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
                         "@context": "https://schema.org",
                         "@type": "Product",
                         name: product.name,
-                        image: product.images?.[0] || "https://rosaceleste.com/og-image.jpg",
+                        image: product.image_url?.[0] || "https://rosaceleste.com/og-image.jpg",
                         description: product.description,
                         sku: product.slug,
                         offers: {

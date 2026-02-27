@@ -55,6 +55,9 @@ export function NarrativeSection() {
                             <p className="mb-6">
                                 No necesitas conocimientos previos para pasar de principiante a avanzado con nuestra metodología de aprendizaje, donde no solo aprendes a tejer algo por tu cuenta, sino que disfrutas de la calma y la alegría de hacer algo por ti y para ti.
                             </p>
+                            <p className="text-muted text-sm md:text-base mt-3 mb-6">
+                                Cada clase tiene una duración de 2 horas en la que puedes aprender proyectos como los que te mostramos a continuación, y se agendan en calendario una vez realices el abono del 50% del valor total.
+                            </p>
                             <p className="font-normal text-foreground">
                                 Nuestras sugerencias son para comenzar amablemente por este camino maravilloso, sin frustraciones ni complicaciones:
                             </p>
