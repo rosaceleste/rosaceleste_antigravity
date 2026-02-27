@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Modal, ModalBody, ModalContainer, ModalDialog } from '@heroui/react'
 import { X, Play } from 'lucide-react'
 import posthog from 'posthog-js'
 
@@ -13,18 +12,15 @@ export function GiftVideoBanner() {
     const [isVisible, setIsVisible] = useState(false)
     const [isModalOpen, setIsModalOpen] = useState(false)
 
-    // Mostrar solo si no fue cerrado en los últimos 7 días
     useEffect(() => {
         const closedAt = localStorage.getItem(STORAGE_KEY)
 
         const showBanner = () => {
-            // Registrar viewed en PostHog
             posthog.capture('gift_banner_viewed')
             setIsVisible(true)
         }
 
         if (!closedAt) {
-            // Pequeño delay para no competir con la carga inicial
             const timer = setTimeout(showBanner, 1800)
             return () => clearTimeout(timer)
         }
@@ -36,20 +32,32 @@ export function GiftVideoBanner() {
         }
     }, [])
 
+    // Bloquear scroll cuando el modal está abierto
+    useEffect(() => {
+        if (isModalOpen) {
+            document.body.style.overflow = 'hidden'
+        } else {
+            document.body.style.overflow = ''
+        }
+        return () => { document.body.style.overflow = '' }
+    }, [isModalOpen])
+
     const handleClose = () => {
         localStorage.setItem(STORAGE_KEY, Date.now().toString())
         setIsVisible(false)
-        // PostHog tracking
         posthog.capture('gift_banner_closed')
     }
 
     const handleOpenVideo = () => {
         setIsModalOpen(true)
-        // PostHog tracking
         posthog.capture('gift_video_clicked', {
             video_url: 'https://youtu.be/IKYg13vEAIc',
             video_title: 'Tutorial Portavasos 4 min'
         })
+    }
+
+    const handleCloseModal = () => {
+        setIsModalOpen(false)
     }
 
     return (
@@ -122,65 +130,89 @@ export function GiftVideoBanner() {
                 )}
             </AnimatePresence>
 
-            {/* MODAL CON YOUTUBE EMBED */}
-            <Modal
-                isOpen={isModalOpen}
-                onOpenChange={setIsModalOpen}
-            >
-                <ModalContainer className="max-w-3xl rounded-xl overflow-hidden">
-                    <ModalDialog>
-                        <ModalBody className="p-0">
-                            {/* Botón cerrar interno */}
-                            <div className="relative">
-                                <button
-                                    onClick={() => setIsModalOpen(false)}
-                                    className="
-                  absolute top-3 right-3 z-10
-                  bg-black/50 hover:bg-black/70
-                  text-white rounded-full p-1.5
-                  transition-colors duration-200
-                "
-                                    aria-label="Cerrar video"
-                                >
-                                    <X size={16} />
-                                </button>
+            {/* MODAL CON YOUTUBE EMBED — nativo, sin dependencias de HeroUI */}
+            <AnimatePresence>
+                {isModalOpen && (
+                    <>
+                        {/* Backdrop */}
+                        <motion.div
+                            key="backdrop"
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            transition={{ duration: 0.2 }}
+                            className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm"
+                            onClick={handleCloseModal}
+                            aria-hidden="true"
+                        />
 
-                                {/* YouTube embed responsive */}
-                                <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
-                                    <iframe
-                                        src="https://www.youtube.com/embed/IKYg13vEAIc?autoplay=1&rel=0"
-                                        title="Tutorial portavasos macramé — Rosaceleste"
-                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                        allowFullScreen
-                                        className="absolute inset-0 w-full h-full rounded-xl"
-                                        loading="lazy"
-                                    />
-                                </div>
-
-                                {/* Footer del modal */}
-                                <div className="p-4 bg-[#F5F1E8] flex items-center justify-between">
-                                    <p className="font-sans text-sm text-[#4A4A4A]">
-                                        ¿Te gustó? <span className="text-[#2C5F5D] font-medium">¡Aprende más en una clase!</span>
-                                    </p>
-                                    <a
-                                        href="/clases"
-                                        onClick={() => setIsModalOpen(false)}
+                        {/* Modal panel */}
+                        <motion.div
+                            key="modal"
+                            initial={{ opacity: 0, scale: 0.95, y: 20 }}
+                            animate={{ opacity: 1, scale: 1, y: 0 }}
+                            exit={{ opacity: 0, scale: 0.95, y: 20 }}
+                            transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+                            className="fixed inset-0 z-50 flex items-center justify-center p-4 pointer-events-none"
+                        >
+                            <div
+                                className="bg-white rounded-2xl overflow-hidden shadow-2xl w-full max-w-3xl pointer-events-auto"
+                                role="dialog"
+                                aria-modal="true"
+                                aria-label="Tutorial de portavasos"
+                            >
+                                {/* Botón cerrar */}
+                                <div className="relative">
+                                    <button
+                                        onClick={handleCloseModal}
                                         className="
-                    font-sans text-xs font-semibold
-                    bg-[#2C5F5D] text-white
-                    px-4 py-2 rounded-lg
-                    hover:bg-[#1e4543] transition-colors
-                    whitespace-nowrap
-                  "
+                      absolute top-3 right-3 z-10
+                      bg-black/50 hover:bg-black/70
+                      text-white rounded-full p-1.5
+                      transition-colors duration-200
+                    "
+                                        aria-label="Cerrar video"
                                     >
-                                        Ver clases &rarr;
-                                    </a>
+                                        <X size={16} />
+                                    </button>
+
+                                    {/* YouTube embed responsive */}
+                                    <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+                                        <iframe
+                                            src="https://www.youtube.com/embed/IKYg13vEAIc?autoplay=1&rel=0"
+                                            title="Tutorial portavasos macramé — Rosaceleste"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                            allowFullScreen
+                                            className="absolute inset-0 w-full h-full"
+                                            loading="lazy"
+                                        />
+                                    </div>
+
+                                    {/* Footer del modal */}
+                                    <div className="p-4 bg-[#F5F1E8] flex items-center justify-between gap-4">
+                                        <p className="font-sans text-sm text-[#4A4A4A]">
+                                            ¿Te gustó? <span className="text-[#2C5F5D] font-medium">¡Aprende más en una clase!</span>
+                                        </p>
+                                        <a
+                                            href="/clases"
+                                            onClick={handleCloseModal}
+                                            className="
+                        font-sans text-xs font-semibold
+                        bg-[#2C5F5D] text-white
+                        px-4 py-2 rounded-lg
+                        hover:bg-[#1e4543] transition-colors
+                        whitespace-nowrap
+                      "
+                                        >
+                                            Ver clases &rarr;
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
-                        </ModalBody>
-                    </ModalDialog>
-                </ModalContainer>
-            </Modal>
+                        </motion.div>
+                    </>
+                )}
+            </AnimatePresence>
         </>
     )
 }
