@@ -1,6 +1,20 @@
 PRD: Sitio Web Rosaceleste
 Product Requirements Document v1.1
-**Última actualización:** 13 de Febrero, 2026
+**Última actualización:** 27 de Febrero, 2026
+
+---
+
+🏁 MVP FASE 1 COMPLETADO — 27 Feb 2026
+✅ 13 Issues implementadas y cerradas
+✅ CI/CD activo (Vercel + GitHub)
+✅ Analytics: PostHog + GA4 (G-97MG7GG35P) + Clarity (vje4q678xo)
+✅ SEO: sitemap.xml + robots.txt + OG metadata
+✅ Gift Video Banner: Tutorial portavasos (localStorage 7 días)
+✅ Imágenes: PENDIENTE — 4 fotos HEIC requieren re-subida manual
+
+Pendiente único (manual del cliente):
+ Re-subir 4 imágenes en JPEG real a Supabase Storage:
+chaleco.jpg / tapiz-montana.jpg / portavasos-corazon.jpg / individuales-redondos.jpg
 
 ---
 
