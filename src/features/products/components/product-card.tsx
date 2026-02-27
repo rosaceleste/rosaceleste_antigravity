@@ -13,8 +13,18 @@ interface ProductCardProps {
     product: Product
 }
 
+// Local image overrides: these products have files in /public/products/
+// because their Supabase Storage URLs are not accessible.
+const LOCAL_IMAGE_OVERRIDES: Record<string, string> = {
+    'portavasos-corazon': '/products/portavasos-corazon-1.jpg',
+    'individuales-redondos-ancestral': '/products/individuales-redondos-ancestral-1.jpg',
+    'tapiz-montana': '/products/tapiz-montana-1.jpg',
+    'chalecos-bolsos': '/products/chalecos-1.jpg',
+}
+
 export function ProductCard({ product }: ProductCardProps) {
-    const imageUrl = product.image_url?.[0]
+    // Use local override if available, otherwise use Supabase URL
+    const imageUrl = LOCAL_IMAGE_OVERRIDES[product.slug] ?? product.image_url?.[0]
 
     const handleWhatsAppClick = (e: React.MouseEvent) => {
         e.stopPropagation();
