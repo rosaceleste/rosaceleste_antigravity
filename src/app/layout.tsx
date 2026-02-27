@@ -7,6 +7,8 @@ import { Footer } from "@/components/layout/footer";
 import { CookieBanner } from "@/components/layout/cookie-banner";
 import { FloatingWhatsApp } from "@/components/layout/FloatingWhatsApp";
 import { FloatingVideo } from "@/components/layout/FloatingVideo";
+import { GoogleAnalytics } from '@next/third-parties/google';
+import Script from 'next/script';
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -22,36 +24,39 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://rosaceleste.com'),
+  metadataBase: new URL('https://rosaceleste.vercel.app'),
   title: {
-    default: "Rosaceleste | El Camino del Tejido",
-    template: "%s | Rosaceleste"
+    default: 'Rosaceleste | Macramé Consciente',
+    template: '%s | Rosaceleste',
   },
-  description: "Macramé consciente y experiencias de bienestar artesanal. Aprende a tejer desde la calma y la presencia.",
-  keywords: ["macramé", "tejido", "bienestar", "cursos", "decoración", "artesanía", "colombia"],
-  authors: [{ name: "Rosaceleste" }],
-  creator: "Rosaceleste",
+  description: 'Cursos, productos y experiencias de bienestar a través del macramé. Aprende a tejer desde la calma y la presencia.',
+  keywords: ['macramé', 'cursos de macramé', 'productos artesanales', 'bienestar', 'mindfulness', 'tejido a mano', 'Colombia', 'Buga'],
+  authors: [{ name: 'Daniela Sierra — Rosaceleste' }],
   openGraph: {
-    type: "website",
-    locale: "es_CO",
-    url: "https://rosaceleste.com",
-    title: "Rosaceleste | El Camino del Tejido",
-    description: "Macramé consciente y experiencias de bienestar artesanal.",
-    siteName: "Rosaceleste",
+    title: 'Rosaceleste | Macramé Consciente',
+    description: 'Cursos, productos y experiencias de bienestar a través del macramé.',
+    url: 'https://rosaceleste.vercel.app',
+    siteName: 'Rosaceleste',
     images: [
       {
-        url: "/og-image.jpg", // Needs to be added to public
+        url: '/og-home.jpg',
         width: 1200,
         height: 630,
-        alt: "Rosaceleste - Macramé Consciente",
+        alt: 'Rosaceleste — Macramé Consciente',
       },
     ],
+    locale: 'es_CO',
+    type: 'website',
   },
   twitter: {
-    card: "summary_large_image",
-    title: "Rosaceleste | El Camino del Tejido",
-    description: "Macramé consciente y experiencias de bienestar artesanal.",
-    images: ["/og-image.jpg"],
+    card: 'summary_large_image',
+    title: 'Rosaceleste | Macramé Consciente',
+    description: 'Cursos, productos y experiencias de bienestar a través del macramé.',
+    images: ['/og-home.jpg'],
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
   icons: {
     icon: "/favicon.ico",
@@ -68,6 +73,20 @@ export default function RootLayout({
       <body
         className={`${playfair.variable} ${inter.variable} font-sans antialiased bg-background text-foreground`}
       >
+        <Script
+          id="clarity-script"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function(c,l,a,r,i,t,y){
+                  c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                  t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                  y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+              })(window, document, "clarity", "script", "${process.env.NEXT_PUBLIC_CLARITY_ID}");
+            `,
+          }}
+        />
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID!} />
         <RootProvider>
           <Navbar />
           <main className="pt-24 min-h-screen">

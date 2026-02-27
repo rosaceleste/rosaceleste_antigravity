@@ -5,6 +5,7 @@ import { NarrativeSection } from "@/features/home/components/narrative-section";
 import { ProductCarousel } from "@/features/home/components/product-carousel";
 import { ExperiencesSection } from "@/features/home/components/experiences-section";
 import { TestimonialsSection } from "@/features/home/components/testimonials-section";
+import { GiftVideoBanner } from "@/components/home/GiftVideoBanner";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -46,6 +47,7 @@ export default async function Home() {
         <ExperiencesSection />
         <TestimonialsSection />
       </main>
+      <GiftVideoBanner />
     </div>
   );
 }

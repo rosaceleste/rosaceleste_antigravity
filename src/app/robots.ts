@@ -5,8 +5,8 @@ export default function robots(): MetadataRoute.Robots {
         rules: {
             userAgent: '*',
             allow: '/',
-            disallow: ['/api/', '/admin/', '/private/'],
+            disallow: '/admin/',
         },
-        sitemap: 'https://rosaceleste.com/sitemap.xml',
+        sitemap: 'https://rosaceleste.vercel.app/sitemap.xml',
     }
 }

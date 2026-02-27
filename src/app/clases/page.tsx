@@ -7,13 +7,8 @@ import { ClassBookingButton } from './ClassBookingButton'
 import { PriceCard } from './PriceCard'
 
 export const metadata: Metadata = {
-    title: 'Clases de Tejido | Rosaceleste',
-    description: 'Clases personalizadas de macramé y tejido consciente. Virtuales o presenciales, para todos los niveles.',
-    openGraph: {
-        title: 'Clases de Tejido | Rosaceleste',
-        description: 'Aprende a tejer desde la calma. Clases presenciales y virtuales.',
-        images: ["/og-classes.jpg"]
-    }
+    title: 'Clases de macramé',
+    description: 'Clases presenciales personalizadas y virtuales de macramé. Aprende desde cero con Daniela Sierra en Buga, Colombia.',
 }
 
 const categories = [

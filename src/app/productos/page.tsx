@@ -6,13 +6,8 @@ import { createClient } from '@/lib/supabase/server' // We need a server client 
 export const revalidate = 60 // ISR: revalidate every 60 seconds
 
 export const metadata: Metadata = {
-    title: "Catálogo de Macramé | Rosaceleste",
-    description: "Explora nuestra colección de piezas únicas tejidas a mano. Decoración, accesorios y kits de macramé hechos con amor en Colombia.",
-    openGraph: {
-        title: "Catálogo de Macramé | Rosaceleste",
-        description: "Piezas únicas tejidas a mano para tu hogar y bienestar.",
-        images: ["/og-catalog.jpg"]
-    }
+    title: 'Catálogo de productos',
+    description: 'Explora nuestra colección de piezas de macramé hechas a mano. Portavasos, tapices, espejos, bolsos y más.',
 }
 
 export default async function ProductsPage() {

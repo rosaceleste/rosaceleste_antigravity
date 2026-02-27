@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { Instagram, Mail, Phone, MapPin, Youtube, Video } from "lucide-react";
+import { Instagram, Mail, Phone, MapPin, Youtube } from "lucide-react";
 import posthog from 'posthog-js';
 
 const TikTokIcon = ({ size = 20 }: { size?: number }) => (
