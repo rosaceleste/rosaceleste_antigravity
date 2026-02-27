@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react';
-import { Play, X } from 'lucide-react';
+import { Clapperboard, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export function FloatingVideo() {
@@ -9,13 +9,16 @@ export function FloatingVideo() {
 
     return (
         <>
-            <button
+            <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.97 }}
                 onClick={() => setIsOpen(true)}
-                className="fixed bottom-[104px] right-6 z-50 flex items-center justify-center w-14 h-14 bg-white text-[#2C5F5D] border-2 border-[#2C5F5D] rounded-full shadow-lg hover:scale-110 transition-transform hover:shadow-xl"
-                aria-label="Ver video de introducción"
+                className="fixed bottom-[8.5rem] right-4 z-50 flex items-center gap-2 bg-[#2C5F5D] text-white px-4 py-2.5 rounded-full shadow-lg hover:shadow-xl font-sans text-sm font-medium transition-shadow duration-300"
+                aria-label="Ver video de Rosaceleste"
             >
-                <Play className="w-6 h-6 ml-1" />
-            </button>
+                <Clapperboard size={16} strokeWidth={1.5} />
+                <span>Ver video</span>
+            </motion.button>
 
             <AnimatePresence>
                 {isOpen && (
