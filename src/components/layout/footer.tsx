@@ -22,7 +22,7 @@ export function Footer() {
             { label: "Uso Personal", href: "/productos" },
         ],
         nosotros: [
-            { label: "Sobre Mí", href: "/sobre-nosotros" },
+            { label: "Sobre Mí", href: "/sobre-mi" },
             { label: "Clases", href: "/clases" },
             { label: "Experiencias", href: "/experiencias" },
         ],

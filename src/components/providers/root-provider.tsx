@@ -1,20 +1,16 @@
 'use client'
 
-import { RouterProvider } from '@heroui/react'
-import { useRouter } from 'next/navigation'
 import { ThemeProvider as NextThemesProvider } from 'next-themes'
 import { AnalyticsProvider } from './analytics-provider'
+import { Toaster } from '@/components/ui/sonner'
 
 export function RootProvider({ children }: { children: React.ReactNode }) {
-    const router = useRouter()
-
     return (
-        <RouterProvider navigate={router.push}>
-            <NextThemesProvider attribute="class" defaultTheme="light">
-                <AnalyticsProvider>
-                    {children}
-                </AnalyticsProvider>
-            </NextThemesProvider>
-        </RouterProvider>
+        <NextThemesProvider attribute="class" defaultTheme="light">
+            <AnalyticsProvider>
+                {children}
+            </AnalyticsProvider>
+            <Toaster position="bottom-right" />
+        </NextThemesProvider>
     )
 }

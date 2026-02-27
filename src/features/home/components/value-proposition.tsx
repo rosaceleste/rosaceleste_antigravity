@@ -27,8 +27,16 @@ export function ValueProposition() {
     ];
 
     return (
-        <section id="valores" className="py-24 md:py-32 px-6 bg-background">
+        <section id="valores" className="py-24 md:py-32 px-6 bg-secondary">
             <div className="max-w-7xl mx-auto">
+                <div className="text-center mb-16 md:mb-20">
+                    <span className="text-accent text-xs uppercase tracking-[0.3em] font-semibold mb-4 block">
+                        Por qué elegirnos
+                    </span>
+                    <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-6">
+                        El valor de lo artesanal
+                    </h2>
+                </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
                     {values.map((value, index) => {
                         const Icon = value.icon;
@@ -52,6 +60,7 @@ export function ValueProposition() {
                                 <p className="text-muted leading-relaxed text-lg font-light">
                                     {value.description}
                                 </p>
+                                <div className="mt-8 w-8 h-0.5 bg-accent/30 group-hover:w-16 transition-all duration-500" />
                             </motion.div>
                         );
                     })}

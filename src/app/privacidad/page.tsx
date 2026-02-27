@@ -18,14 +18,14 @@ export default function PrivacidadPage() {
                     <div className="prose prose-stone max-w-none text-foreground/80 leading-relaxed">
                         <p>Última actualización: {new Date().toLocaleDateString('es-CO')}</p>
 
-                        <h3>1. Información que Recopilamos</h3>
+                        <h3 className="font-serif">1. Información que Recopilamos</h3>
                         <p>
                             Podemos recopilar información personal que nos proporcionas voluntariamente, como tu nombre,
                             correo electrónico y número de teléfono, cuando te suscribes a nuestro boletín,
                             reservas una clase o realizas una consulta.
                         </p>
 
-                        <h3>2. Uso de la Información</h3>
+                        <h3 className="font-serif">2. Uso de la Información</h3>
                         <p>
                             Utilizamos tu información para:
                         </p>
@@ -35,20 +35,20 @@ export default function PrivacidadPage() {
                             <li>Mejorar nuestro sitio web y experiencia de usuario.</li>
                         </ul>
 
-                        <h3>3. Protección de Datos</h3>
+                        <h3 className="font-serif">3. Protección de Datos</h3>
                         <p>
                             Implementamos medidas de seguridad para proteger tu información personal.
                             No vendemos, intercambiamos ni transferimos tu información a terceros sin tu consentimiento,
                             excepto según sea necesario para prestar nuestros servicios (ej. procesadores de pago).
                         </p>
 
-                        <h3>4. Cookies</h3>
+                        <h3 className="font-serif">4. Cookies</h3>
                         <p>
                             Utilizamos cookies para mejorar tu experiencia en nuestro sitio.
                             Puedes elegir desactivar las cookies a través de la configuración de tu navegador.
                         </p>
 
-                        <h3>5. Tus Derechos</h3>
+                        <h3 className="font-serif">5. Tus Derechos</h3>
                         <p>
                             Tienes derecho a acceder, corregir o eliminar tu información personal en cualquier momento.
                             Para ejercer estos derechos, contáctanos a través de nuestros canales oficiales.

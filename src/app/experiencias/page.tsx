@@ -81,7 +81,7 @@ export default function ExperienciasPage() {
                             <div className="w-12 h-12 bg-[#E8F1F2] rounded-full flex items-center justify-center mx-auto text-[#5B8C92]">
                                 <Users className="w-6 h-6" />
                             </div>
-                            <h3 className="font-medium text-lg">Equipos de Trabajo</h3>
+                            <h3 className="font-serif font-medium text-lg">Equipos de Trabajo</h3>
                             <p className="text-foreground/70 text-sm leading-relaxed">
                                 Que buscan cohesión, bienestar y salir de la rutina en un ambiente creativo.
                             </p>
@@ -91,7 +91,7 @@ export default function ExperienciasPage() {
                             <div className="w-12 h-12 bg-[#F9EBE6] rounded-full flex items-center justify-center mx-auto text-[#C97D60]">
                                 <Heart className="w-6 h-6" />
                             </div>
-                            <h3 className="font-medium text-lg">Grupos de Amigos</h3>
+                            <h3 className="font-serif font-medium text-lg">Grupos de Amigos</h3>
                             <p className="text-foreground/70 text-sm leading-relaxed">
                                 Que desean compartir un momento significativo y aprender una nueva habilidad juntos.
                             </p>
@@ -101,7 +101,7 @@ export default function ExperienciasPage() {
                             <div className="w-12 h-12 bg-[#F2F0E9] rounded-full flex items-center justify-center mx-auto text-[#8C8F78]">
                                 <Gift className="w-6 h-6" />
                             </div>
-                            <h3 className="font-medium text-lg">Celebraciones Íntimas</h3>
+                            <h3 className="font-serif font-medium text-lg">Celebraciones Íntimas</h3>
                             <p className="text-foreground/70 text-sm leading-relaxed">
                                 Como cumpleaños conscientes o reuniones especiales llenas de intención.
                             </p>
@@ -109,7 +109,7 @@ export default function ExperienciasPage() {
                     </div>
 
                     <div className="text-center mt-16 text-xl font-serif italic text-foreground/60">
-                        "Más que un taller, es un espacio para crear, conversar y habitar el presente."
+                        &quot;Más que un taller, es un espacio para crear, conversar y habitar el presente.&quot;
                     </div>
                 </Container>
             </section>

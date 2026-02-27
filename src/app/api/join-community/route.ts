@@ -38,14 +38,15 @@ export async function POST(req: Request) {
 
         // 2. Supabase
         const { error: supabaseError } = await getSupabase()
-            .from('leads_comunidad')
+            .from('leads')
             .insert([
                 {
-                    name,
-                    lastname: lastName,
-                    whatsapp,
-                    country,
+                    name: `${name} ${lastName}`.trim(),
                     email,
+                    phone: whatsapp,
+                    country,
+                    source: 'community_form',
+                    interest_type: 'comunidad',
                     created_at: new Date().toISOString(),
                 },
             ])

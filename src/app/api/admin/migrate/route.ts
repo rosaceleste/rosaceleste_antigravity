@@ -80,7 +80,6 @@ export async function POST(request: Request) {
 
         // 2. Sync Products
         console.log('Fetching products from Google Sheets...');
-        // @ts-ignore
         const products = await fetchProductsFromGSheet();
 
         console.log(`Found ${products.length} products. Syncing...`);

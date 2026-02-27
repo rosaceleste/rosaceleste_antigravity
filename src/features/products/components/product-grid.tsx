@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useCallback } from 'react'
 import { Product } from '@/types'
 import { ProductCard } from './product-card'
+import { Button } from '@/components/ui/button'
 
 interface ProductGridProps {
     initialProducts: Product[]
@@ -63,16 +64,15 @@ export function ProductGrid({ initialProducts }: ProductGridProps) {
                 {/* Category Filters */}
                 <div className="flex flex-wrap gap-2">
                     {categories.map((cat) => (
-                        <button
+                        <Button
                             key={cat.key}
+                            variant={selectedCategory === cat.key ? 'default' : 'outline'}
+                            size="sm"
                             onClick={() => setSelectedCategory(cat.key)}
-                            className={`px-4 py-2 rounded-full text-sm font-medium transition-all border ${selectedCategory === cat.key
-                                ? 'bg-primary text-primary-foreground border-primary shadow-sm'
-                                : 'bg-background text-muted-foreground border-border hover:border-primary hover:text-primary'
-                                }`}
+                            className="rounded-full"
                         >
                             {cat.label}
-                        </button>
+                        </Button>
                     ))}
                 </div>
 
@@ -106,12 +106,13 @@ export function ProductGrid({ initialProducts }: ProductGridProps) {
             ) : (
                 <div className="py-24 text-center">
                     <p className="text-xl text-muted-foreground">No encontramos productos en esta categoría.</p>
-                    <button
+                    <Button
+                        variant="link"
                         onClick={() => setSelectedCategory('all')}
-                        className="mt-4 text-sm text-primary underline hover:no-underline"
+                        className="mt-4 text-primary"
                     >
                         Ver todos los productos
-                    </button>
+                    </Button>
                 </div>
             )}
         </div>

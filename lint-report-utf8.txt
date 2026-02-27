@@ -1,0 +1,68 @@
+﻿
+> rosaceleste-app@0.1.0 lint
+> eslint
+
+
+C:\Users\manue\AI Product Maker\Google Antigravity\Rosaceleste\scripts\verify-image-access.js
+  1:15  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+
+C:\Users\manue\AI Product Maker\Google Antigravity\Rosaceleste\scripts\verify-sheets.js
+  1:15  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+
+C:\Users\manue\AI Product Maker\Google Antigravity\Rosaceleste\src\app\admin\page.tsx
+   6:10  warning  'Input' is defined but never used         @typescript-eslint/no-unused-vars
+  45:25  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\manue\AI Product Maker\Google Antigravity\Rosaceleste\src\app\api\admin\migrate-images\route.ts
+  47:11  warning  'baseUrl' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\manue\AI Product Maker\Google Antigravity\Rosaceleste\src\app\api\admin\migrate\route.ts
+  83:9  error  Use "@ts-expect-error" instead of "@ts-ignore", as "@ts-ignore" will do nothing if the following line is error-free  @typescript-eslint/ban-ts-comment
+
+C:\Users\manue\AI Product Maker\Google Antigravity\Rosaceleste\src\app\experiencias\page.tsx
+  112:25   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  112:103  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+C:\Users\manue\AI Product Maker\Google Antigravity\Rosaceleste\src\app\sitemap.ts
+  12:82  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\manue\AI Product Maker\Google Antigravity\Rosaceleste\src\components\JoinCommunityForm.tsx
+   8:10  warning  'parsePhoneNumber' is defined but never used  @typescript-eslint/no-unused-vars
+  70:18  warning  'e' is defined but never used                 @typescript-eslint/no-unused-vars
+
+C:\Users\manue\AI Product Maker\Google Antigravity\Rosaceleste\src\components\magicui\marquee.tsx
+  10:18  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\manue\AI Product Maker\Google Antigravity\Rosaceleste\src\components\magicui\shimmer-button.tsx
+  100:43  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  104:31  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\manue\AI Product Maker\Google Antigravity\Rosaceleste\src\features\home\components\experiences-section.tsx
+   6:22  warning  'Calendar' is defined but never used                             @typescript-eslint/no-unused-vars
+   6:32  warning  'Users' is defined but never used                                @typescript-eslint/no-unused-vars
+   7:10  warning  'motion' is defined but never used                               @typescript-eslint/no-unused-vars
+  41:33  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  41:87  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+C:\Users\manue\AI Product Maker\Google Antigravity\Rosaceleste\src\features\home\components\hero-section.tsx
+   26:30  error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+   37:25  error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  154:29  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  154:91  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+C:\Users\manue\AI Product Maker\Google Antigravity\Rosaceleste\src\features\home\components\narrative-section.tsx
+  4:8   warning  'Link' is defined but never used          @typescript-eslint/no-unused-vars
+  5:23  warning  'ExternalLink' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\manue\AI Product Maker\Google Antigravity\Rosaceleste\src\features\home\components\product-carousel.tsx
+  10:35  warning  'products' is defined but never used      @typescript-eslint/no-unused-vars
+  10:59  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\manue\AI Product Maker\Google Antigravity\Rosaceleste\src\features\home\components\testimonials-client.tsx
+   6:10  warning  'Testimonial' is defined but never used                          @typescript-eslint/no-unused-vars
+   9:19  error    Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  34:29  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  34:51  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+Γ£û 31 problems (20 errors, 11 warnings)
+

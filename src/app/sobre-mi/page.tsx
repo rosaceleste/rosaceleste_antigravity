@@ -129,7 +129,7 @@ export default function AboutPage() {
 
                     <div className="relative z-10">
                         <JoinCommunityForm>
-                            <Button className="bg-white text-primary hover:bg-secondary rounded-full px-8 py-6 text-lg tracking-wide shadow-lg border-2 border-transparent hover:border-secondary transition-all">
+                            <Button className="bg-white text-[#2C5F5D] hover:bg-[#F5F1E8] rounded-full px-8 py-6 text-lg tracking-wide shadow-lg border-2 border-transparent hover:border-[#2C5F5D] transition-all">
                                 Unirme a la Comunidad
                             </Button>
                         </JoinCommunityForm>

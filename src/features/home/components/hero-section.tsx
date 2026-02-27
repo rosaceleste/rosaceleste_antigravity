@@ -6,7 +6,8 @@ import Image from "next/image";
 // import { AnimatedGradientText } from "@/components/magicui/animated-gradient-text"; // Keeping for future use if needed, but styling prefers clean text now
 import { PRODUCT_IMAGES } from "@/constants/images";
 import { ArrowRight } from "lucide-react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { motion, useScroll, useTransform, Variants } from "framer-motion";
 import posthog from 'posthog-js';
 
 export function HeroSection() {
@@ -23,7 +24,7 @@ export function HeroSection() {
     // Select best product image for hero
     const heroImage = PRODUCT_IMAGES.featured[0]; // Tezza-5466.jpg
 
-    const containerVariants: any = {
+    const containerVariants: Variants = {
         hidden: { opacity: 0 },
         visible: {
             opacity: 1,
@@ -34,7 +35,7 @@ export function HeroSection() {
         }
     };
 
-    const itemVariants: any = {
+    const itemVariants: Variants = {
         hidden: { opacity: 0, y: 30 },
         visible: {
             opacity: 1,
@@ -79,7 +80,7 @@ export function HeroSection() {
 
                             <motion.h2
                                 variants={itemVariants}
-                                className="text-xl sm:text-2xl font-light text-muted max-w-lg leading-relaxed"
+                                className="text-xl sm:text-2xl font-serif font-light text-muted max-w-lg leading-relaxed"
                             >
                                 Macramé consciente para crear, pausar y conectar desde la presencia.
                             </motion.h2>
@@ -88,22 +89,30 @@ export function HeroSection() {
                                 variants={itemVariants}
                                 className="flex flex-col sm:flex-row items-center gap-4 pt-4"
                             >
-                                <Link
-                                    href="/productos"
-                                    className="group relative flex items-center gap-3 px-8 py-4 rounded-full bg-primary text-primary-foreground transition-all duration-300 hover:shadow-lg hover:-translate-y-1 w-full sm:w-auto justify-center"
+                                <Button
+                                    asChild
+                                    variant="secondary"
+                                    size="lg"
+                                    className="w-full sm:w-auto"
                                     onClick={() => handleCtaClick('productos')}
                                 >
-                                    <span className="font-medium tracking-wide">Ver Productos</span>
-                                    <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-                                </Link>
+                                    <Link href="/productos">
+                                        <span className="font-medium tracking-wide">Ver Productos</span>
+                                    </Link>
+                                </Button>
 
-                                <Link
-                                    href="/clases"
-                                    className="group relative flex items-center gap-3 px-8 py-4 rounded-full border border-primary/20 text-primary transition-all duration-300 hover:bg-secondary hover:border-primary/40 w-full sm:w-auto justify-center"
+                                <Button
+                                    asChild
+                                    variant="default"
+                                    size="lg"
+                                    className="w-full sm:w-auto"
                                     onClick={() => handleCtaClick('cursos')}
                                 >
-                                    <span className="font-medium tracking-wide">Explorar Cursos</span>
-                                </Link>
+                                    <Link href="/clases">
+                                        <span className="font-medium tracking-wide">Explorar Cursos</span>
+                                        <ArrowRight className="w-4 h-4 ml-2" />
+                                    </Link>
+                                </Button>
                             </motion.div>
                         </motion.div>
 
@@ -112,14 +121,17 @@ export function HeroSection() {
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ delay: 1.2, duration: 1 }}
-                            className="flex items-center gap-4 text-sm text-muted/60"
+                            className="flex items-center"
                         >
-                            <div className="flex -space-x-2">
-                                {[1, 2, 3].map((i) => (
-                                    <div key={i} className="w-8 h-8 rounded-full bg-gray-200 border-2 border-background" />
-                                ))}
+                            <div className="flex items-center gap-3 py-2">
+                                <span className="relative flex h-2 w-2">
+                                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
+                                    <span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
+                                </span>
+                                <p className="text-primary font-medium text-sm tracking-wide uppercase">
+                                    Más de 500 alumnas en 2025
+                                </p>
                             </div>
-                            <p>Más de 500 alumnas en 2025</p>
                         </motion.div>
                     </div>
 
@@ -151,7 +163,7 @@ export function HeroSection() {
                             transition={{ delay: 1, duration: 0.8 }}
                             className="absolute -bottom-6 -left-6 lg:left-[-3rem] bg-white/90 backdrop-blur italic font-serif text-lg p-6 rounded-none shadow-sm border border-black/5 max-w-xs hidden md:block"
                         >
-                            "El tejido es el lenguaje silencioso de las manos que sienten."
+                            &quot;El tejido es el lenguaje silencioso de las manos que sienten.&quot;
                         </motion.div>
                     </div>
                 </div>

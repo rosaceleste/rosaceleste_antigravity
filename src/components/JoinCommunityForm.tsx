@@ -5,7 +5,7 @@ import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import * as z from 'zod'
 import ReactCountryFlag from "react-country-flag"
-import { parsePhoneNumber, isValidPhoneNumber } from 'libphonenumber-js'
+import { isValidPhoneNumber } from 'libphonenumber-js'
 import {
     Dialog,
     DialogContent,
@@ -67,7 +67,7 @@ const formSchema = z.object({
     whatsapp: z.string().refine((val) => {
         try {
             return isValidPhoneNumber(val)
-        } catch (e) {
+        } catch {
             return false
         }
     }, {

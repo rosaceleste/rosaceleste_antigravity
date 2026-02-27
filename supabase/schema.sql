@@ -45,6 +45,30 @@ create policy "Public testimonials are viewable by everyone"
   on public.testimonials for select
   using ( true );
 
--- POLICIES (OPTIONAL: ADMIN WRITE ACCESS - IF YOU USE SERVICE_ROLE KEY THIS IS NOT STRICTLY NEEDED BUT GOOD PRACTICE)
--- Assuming service role bypasses RLS, explicit insert policies for anon are generally not needed unless we want public submissions.
--- We will migrate data using a server-side route which can use SERVICE_ROLE key or just assume we run this SQL via Dashboard.
+-- LEADS TABLE
+create table if not exists public.leads (
+  id uuid default uuid_generate_v4() primary key,
+  name varchar(255) not null,
+  email varchar(255) not null,
+  phone varchar(50),
+  country varchar(100),
+  city varchar(100),
+  interest_type varchar(50), -- 'presencial', 'online', 'grupal', 'individual', 'producto'
+  message text,
+  source varchar(50), -- 'landing', 'productos', 'clases'
+  status varchar(50) default 'new', -- 'new', 'contacted', 'converted', 'lost'
+  created_at timestamptz default now()
+);
+
+-- ENABLE RLS FOR LEADS
+alter table public.leads enable row level security;
+
+-- POLICY FOR LEADS (ADMIN ONLY - SERVICE ROLE)
+-- Public can only insert
+create policy "Public can insert leads"
+  on public.leads for insert
+  with check ( true );
+
+create policy "Admins can view leads"
+  on public.leads for select
+  using ( auth.role() = 'service_role' );

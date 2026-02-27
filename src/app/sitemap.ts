@@ -1,53 +1,61 @@
 import { MetadataRoute } from 'next'
-import { SITE_CONFIG } from '@/constants/site'
 import { createClient } from '@/lib/supabase/server'
 
+export const revalidate = 86400 // Revalidate daily
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-    const supabase = await createClient()
-    const { data: products } = await supabase
-        .from('products')
-        .select('slug, updated_at')
-        .eq('is_active', true)
+    const baseUrl = 'https://rosaceleste.com'
 
-    const productEntries: MetadataRoute.Sitemap = (products || []).map((product: any) => ({
-        url: `${SITE_CONFIG.url}/productos/${product.slug}`,
-        lastModified: new Date(product.updated_at),
-        changeFrequency: 'weekly',
-        priority: 0.8,
-    }))
-
-    const staticRoutes: MetadataRoute.Sitemap = [
+    const staticPages: MetadataRoute.Sitemap = [
         {
-            url: SITE_CONFIG.url,
+            url: baseUrl,
             lastModified: new Date(),
-            changeFrequency: 'monthly',
+            changeFrequency: 'weekly',
             priority: 1,
         },
         {
-            url: `${SITE_CONFIG.url}/productos`,
+            url: `${baseUrl}/productos`,
             lastModified: new Date(),
-            changeFrequency: 'weekly',
+            changeFrequency: 'daily',
             priority: 0.9,
         },
         {
-            url: `${SITE_CONFIG.url}/clases`,
+            url: `${baseUrl}/clases`,
             lastModified: new Date(),
-            changeFrequency: 'monthly',
+            changeFrequency: 'weekly',
             priority: 0.8,
         },
         {
-            url: `${SITE_CONFIG.url}/experiencias`,
-            lastModified: new Date(),
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-        {
-            url: `${SITE_CONFIG.url}/sobre-nosotros`,
+            url: `${baseUrl}/experiencias`,
             lastModified: new Date(),
             changeFrequency: 'monthly',
             priority: 0.7,
         },
+        {
+            url: `${baseUrl}/sobre-mi`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.6,
+        },
     ]
 
-    return [...staticRoutes, ...productEntries]
+    try {
+        const supabase = await createClient()
+        const { data: products } = await supabase
+            .from('products')
+            .select('slug, updated_at')
+            .eq('is_active', true)
+
+        const productPages: MetadataRoute.Sitemap = (products || []).map((product) => ({
+            url: `${baseUrl}/productos/${product.slug}`,
+            lastModified: new Date(product.updated_at || new Date()),
+            changeFrequency: 'weekly',
+            priority: 0.8,
+        }))
+
+        return [...staticPages, ...productPages]
+    } catch (error) {
+        console.error('Error generating product sitemap', error)
+        return staticPages
+    }
 }

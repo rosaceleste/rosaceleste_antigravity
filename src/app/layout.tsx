@@ -5,10 +5,13 @@ import { RootProvider } from "@/components/providers/root-provider";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { CookieBanner } from "@/components/layout/cookie-banner";
+import { FloatingWhatsApp } from "@/components/layout/FloatingWhatsApp";
+import { FloatingVideo } from "@/components/layout/FloatingVideo";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
   variable: "--font-serif",
+  weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
@@ -63,7 +66,7 @@ export default function RootLayout({
   return (
     <html lang="es" suppressHydrationWarning>
       <body
-        className={`${playfair.variable} ${inter.variable} font-sans antialiased bg-[#FAFAFA] text-[#1A1A1A]`}
+        className={`${playfair.variable} ${inter.variable} font-sans antialiased bg-background text-foreground`}
       >
         <RootProvider>
           <Navbar />
@@ -72,6 +75,8 @@ export default function RootLayout({
           </main>
           <Footer />
           <CookieBanner />
+          <FloatingVideo />
+          <FloatingWhatsApp />
         </RootProvider>
       </body>
     </html>

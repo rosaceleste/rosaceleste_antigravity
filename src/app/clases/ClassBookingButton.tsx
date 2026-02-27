@@ -1,6 +1,7 @@
 'use client'
 
 import { Button } from '@/components/ui/button'
+import { cn } from '@/lib/utils'
 import posthog from 'posthog-js'
 
 interface ClassBookingButtonProps {
@@ -25,27 +26,20 @@ export function ClassBookingButton({
         })
     }
 
-    if (variant === 'secondary') {
-        return (
-            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" onClick={handleClick}>
-                <Button
-                    variant="outline"
-                    className={className || "bg-transparent border-white text-white hover:bg-white hover:text-[#2C5F5D] rounded-full px-8 py-6 text-lg border-2"}
-                >
-                    {children}
-                </Button>
-            </a>
-        )
-    }
-
     return (
-        <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" onClick={handleClick}>
-            <Button
-                size="lg"
-                className={className || "rounded-full px-8 py-6 text-lg tracking-wide shadow-lg transition-all hover:scale-105"}
-            >
+        <Button
+            asChild
+            variant={variant === 'secondary' ? 'secondary' : 'default'}
+            size="lg"
+            className={cn(
+                "rounded-full px-8 py-6 text-lg tracking-wide shadow-lg",
+                className
+            )}
+            onClick={handleClick}
+        >
+            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
                 {children}
-            </Button>
-        </a>
+            </a>
+        </Button>
     )
 }

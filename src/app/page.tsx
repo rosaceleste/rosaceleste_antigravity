@@ -5,7 +5,6 @@ import { NarrativeSection } from "@/features/home/components/narrative-section";
 import { ProductCarousel } from "@/features/home/components/product-carousel";
 import { ExperiencesSection } from "@/features/home/components/experiences-section";
 import { TestimonialsSection } from "@/features/home/components/testimonials-section";
-import { createClient } from "@/lib/supabase/server";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -19,22 +18,31 @@ export const metadata: Metadata = {
 };
 
 export default async function Home() {
-  const supabase = await createClient();
-  const { data: featuredProducts } = await supabase
-    .from('products')
-    .select('*')
-    .eq('is_featured', true)
-    .eq('is_active', true)
-    .limit(3);
 
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
       <main className="flex-grow">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "Rosaceleste",
+              url: "https://rosaceleste.com",
+              logo: "https://rosaceleste.com/logo.png",
+              description: "Macramé consciente y experiencias de bienestar artesanal.",
+              sameAs: [
+                "https://www.instagram.com/rosaceleste.macrame",
+              ]
+            })
+          }}
+        />
         <HeroSection />
         <ValueProposition />
         <NarrativeSection />
-        <ProductCarousel products={featuredProducts || []} />
+        <ProductCarousel />
         <ExperiencesSection />
         <TestimonialsSection />
       </main>

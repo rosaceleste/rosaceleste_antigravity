@@ -1,37 +1,43 @@
 @import "tailwindcss";
-@import "@heroui/styles";
 
+@theme {
+  --font-serif: var(--font-serif);
+  --font-sans: var(--font-sans);
 
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-card: var(--card);
+  --color-border: var(--border);
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+}
 
 :root {
-  /* System: Warmth & Approachability */
-  
-  /* Base */
-  --background: #FAFAFA;  /* Neutral Light Canvas */
-  --foreground: #1A1A1A;  /* Neutral Dark Text */
-
-  /* Brand Colors */
-  --primary: #2C5F5D;     /* Deep Teal */
+  --font-serif: var(--font-serif);
+  --font-sans: var(--font-sans);
+  --background: #FAFAFA;
+  --foreground: #1A1A1A;
+  --primary: #2C5F5D;
   --primary-foreground: #FFFFFF;
-  
-  --secondary: #F5F1E8;   /* Soft Beige */
+  --secondary: #F5F1E8;
   --secondary-foreground: #2C5F5D;
-  
-  --accent: #C97D60;      /* Terracotta */
+  --accent: #C97D60;
   --accent-foreground: #FFFFFF;
-  
-  /* UI Elements */
-  --muted: #4A4A4A;       /* Muted Text */
+  --muted: #4A4A4A;
   --muted-foreground: #FAFAFA;
-  
-  --border: rgba(0, 0, 0, 0.08); /* Subtle separation */
-  --input: rgba(0, 0, 0, 0.08);
-  --ring: #2C5F5D;        /* Focus ring */
-  
-  --card: #FFFFFF;        /* Cards */
-  --card-foreground: #1A1A1A;
-  
-  --radius: 0.5rem;       /* 8px default */
+  --card: #FFFFFF;
+  --border: rgba(0, 0, 0, 0.08);
+  --radius: 0.5rem;
 }
 
 body {

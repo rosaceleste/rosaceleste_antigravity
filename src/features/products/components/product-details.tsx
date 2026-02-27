@@ -1,13 +1,14 @@
 'use client'
 
 import React from 'react'
-import { Button } from '@heroui/react'
+import { Button } from '@/components/ui/button'
 import { Product } from '@/types'
 import { ProductCard } from './product-card'
 import { OptimizedImage } from '@/components/ui/optimized-image'
 import { ArrowLeft, MessageCircle, Clock, Star, MapPin, Share2, ShieldCheck, RotateCcw, AlertCircle } from 'lucide-react'
 import Link from 'next/link'
 import posthog from 'posthog-js'
+import { toast } from 'sonner'
 
 interface ProductDetailsProps {
     product: Product
@@ -16,13 +17,13 @@ interface ProductDetailsProps {
 
 export function ProductDetails({ product, relatedProducts = [] }: ProductDetailsProps) {
     const [mainImage, setMainImage] = React.useState(product.image_url[0]);
-    const [showToast, setShowToast] = React.useState(false);
 
     const handleShare = async () => {
         try {
             await navigator.clipboard.writeText(window.location.href);
-            setShowToast(true);
-            setTimeout(() => setShowToast(false), 3000);
+            toast.success('¡Enlace copiado!', {
+                description: 'Listo para compartir en redes o WhatsApp.'
+            });
 
             // Capture product share event
             posthog.capture('product_shared', {
@@ -35,6 +36,7 @@ export function ProductDetails({ product, relatedProducts = [] }: ProductDetails
         } catch (err) {
             console.error('Error al copiar:', err);
             posthog.captureException(err);
+            toast.error('Error al copiar el enlace');
         }
     };
 
@@ -169,20 +171,20 @@ export function ProductDetails({ product, relatedProducts = [] }: ProductDetails
                                     onClick={handleWhatsAppClick}
                                 >
                                     <Button
-                                        className="w-full bg-primary hover:bg-primary/90 text-primary-foreground h-14 text-base font-medium tracking-wide shadow-md hover:shadow-xl hover:-translate-y-0.5 transition-all flex items-center justify-center gap-3 rounded-full"
+                                        className="w-full text-base font-medium tracking-wide"
                                         size="lg"
                                     >
-                                        <MessageCircle className="w-5 h-5" />
+                                        <MessageCircle className="w-5 h-5 mr-1" />
                                         Pedir ahora
                                     </Button>
                                 </a>
                                 <Button
                                     variant="outline"
-                                    className="w-full border-primary text-primary font-medium flex items-center justify-center gap-2 rounded-full hover:bg-secondary/20"
+                                    className="w-full"
                                     size="lg"
-                                    onPress={handleShare}
+                                    onClick={handleShare}
                                 >
-                                    <Share2 className="w-4 h-4" />
+                                    <Share2 className="w-4 h-4 mr-2" />
                                     Compartir
                                 </Button>
                             </div>
@@ -224,27 +226,12 @@ export function ProductDetails({ product, relatedProducts = [] }: ProductDetails
                         </div>
                     </div>
                 </div>
-
-                {/* Toast Notification */}
-                {showToast && (
-                    <div className="fixed bottom-6 right-6 z-50 animate-in slide-in-from-bottom-5 fade-in duration-300">
-                        <div className="bg-foreground text-background px-6 py-4 rounded-xl shadow-2xl flex items-center gap-4 border border-white/10">
-                            <div className="bg-green-500/20 p-2 rounded-full">
-                                <Share2 className="w-4 h-4 text-green-500" />
-                            </div>
-                            <div>
-                                <h4 className="font-bold text-sm">¡Enlace copiado!</h4>
-                                <p className="text-xs text-background/70">Listo para compartir en redes o WhatsApp.</p>
-                            </div>
-                        </div>
-                    </div>
-                )}
             </div>
 
             {/* Related Products Section */}
             {
                 relatedProducts.length > 0 && (
-                    <div className="mt-24 pt-12 border-t border-border">
+                    <div className="mt-24 pt-12 border-t border-border px-6 max-w-7xl mx-auto overflow-hidden">
                         <h2 className="text-3xl font-serif text-foreground mb-8">También te podría gustar</h2>
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                             {relatedProducts.map((related) => (

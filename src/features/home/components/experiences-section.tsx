@@ -3,8 +3,8 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Calendar, Users } from "lucide-react";
-import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export function ExperiencesSection() {
     return (
@@ -12,7 +12,7 @@ export function ExperiencesSection() {
             <div className="max-w-7xl mx-auto px-6">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24">
                     <div className="max-w-xl">
-                        <span className="text-primary text-xs uppercase tracking-[0.2em] mb-4 block">
+                        <span className="text-accent text-xs uppercase tracking-[0.3em] font-semibold mb-4 block">
                             Talleres y Encuentros
                         </span>
                         <h2 className="font-serif text-4xl md:text-5xl text-foreground mb-6 leading-tight">
@@ -21,13 +21,16 @@ export function ExperiencesSection() {
                         <p className="text-muted text-lg font-light leading-relaxed mb-8">
                             Nuestros talleres están diseñados para que desconectes del ruido y conectes con la creación. No necesitas experiencia previa, solo ganas de aprender y compartir.
                         </p>
-                        <Link
-                            href="/clases"
-                            className="inline-flex items-center gap-2 px-8 py-3 rounded-full border border-foreground text-foreground hover:bg-foreground hover:text-background transition-colors uppercase tracking-widest text-xs"
+                        <Button
+                            asChild
+                            variant="secondary"
+                            className="px-10 py-6 h-auto"
                         >
-                            Ver Próximas Fechas
-                            <ArrowRight className="w-4 h-4" />
-                        </Link>
+                            <Link href="/clases">
+                                <span className="uppercase tracking-widest text-xs">Ver Próximas Fechas</span>
+                                <ArrowRight className="w-4 h-4 ml-2" />
+                            </Link>
+                        </Button>
                     </div>
                     <div className="relative aspect-[4/3] w-full">
                         <Image
@@ -38,7 +41,7 @@ export function ExperiencesSection() {
                         />
                         <div className="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-sm p-6 rounded-xl shadow-lg border border-white/20 hidden md:block">
                             <p className="font-serif text-lg text-foreground italic text-center">
-                                "El taller fue un regalo para el alma. Volveré seguro."
+                                &quot;El taller fue un regalo para el alma. Volveré seguro.&quot;
                             </p>
                         </div>
                     </div>

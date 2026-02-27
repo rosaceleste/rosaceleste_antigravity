@@ -5,6 +5,8 @@ import { Container } from '@/components/layout/container'
 import { notFound } from 'next/navigation'
 import { Product } from '@/types'
 
+import { Metadata, ResolvingMetadata } from 'next'
+
 interface ProductPageProps {
     params: Promise<{
         slug: string
@@ -12,6 +14,49 @@ interface ProductPageProps {
 }
 
 export const revalidate = 60
+
+export async function generateMetadata(
+    { params }: ProductPageProps,
+    parent: ResolvingMetadata
+): Promise<Metadata> {
+    const { slug } = await params
+    const supabase = await createClient()
+
+    const { data: product } = await supabase
+        .from('products')
+        .select('name, description, images')
+        .eq('slug', slug)
+        .eq('is_active', true)
+        .single()
+
+    if (!product) {
+        return {
+            title: 'Producto No Encontrado',
+        }
+    }
+
+    const previousImages = (await parent).openGraph?.images || []
+    const productImages = product.images && product.images.length > 0
+        ? product.images.map((img: string) => ({ url: img }))
+        : previousImages
+
+    return {
+        title: product.name,
+        description: product.description.substring(0, 160),
+        openGraph: {
+            title: product.name,
+            description: product.description.substring(0, 160),
+            images: productImages,
+            type: 'website',
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title: product.name,
+            description: product.description.substring(0, 160),
+            images: productImages.map((img: { url: string }) => img.url),
+        }
+    }
+}
 
 export default async function ProductPage({ params }: ProductPageProps) {
     const { slug } = await params
@@ -40,6 +85,28 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
     return (
         <main className="min-h-screen pt-32 pb-24 bg-background">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "Product",
+                        name: product.name,
+                        image: product.images?.[0] || "https://rosaceleste.com/og-image.jpg",
+                        description: product.description,
+                        sku: product.slug,
+                        offers: {
+                            "@type": "Offer",
+                            url: `https://rosaceleste.com/productos/${product.slug}`,
+                            priceCurrency: "COP",
+                            price: product.price,
+                            priceValidUntil: "2027-12-31",
+                            itemCondition: "https://schema.org/NewCondition",
+                            availability: "https://schema.org/InStock"
+                        }
+                    })
+                }}
+            />
             <Container>
                 <div className="pt-8">
                     <ProductDetails

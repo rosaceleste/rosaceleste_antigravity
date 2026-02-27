@@ -3,9 +3,6 @@
 import React, { useState } from 'react'
 import { Container } from '@/components/layout/container'
 import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input' // Assuming we have shadcn input, otherwise native
-// Note: If Input component doesn't exist, I'll fallback to native input. 
-// User mentioned shadcn/ui is used.
 
 export default function AdminPage() {
     const [password, setPassword] = useState('')
@@ -13,7 +10,7 @@ export default function AdminPage() {
     const [message, setMessage] = useState('')
     const [logs, setLogs] = useState<string[]>([])
 
-    const handleSync = async (e: React.FormEvent) => {
+    const handleSync = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         setStatus('loading')
         setMessage('Iniciando sincronización...')
@@ -42,9 +39,9 @@ export default function AdminPage() {
             ]
             setLogs(resultLogs)
 
-        } catch (error: any) {
+        } catch (error) {
             setStatus('error')
-            setMessage(error.message)
+            setMessage(error instanceof Error ? error.message : 'Error desconocido')
         }
     }
 
@@ -83,7 +80,7 @@ export default function AdminPage() {
 
                     {message && (
                         <div className={`mt-6 p-4 rounded-lg text-sm ${status === 'success' ? 'bg-green-50 text-green-700' :
-                                status === 'error' ? 'bg-red-50 text-red-700' : 'bg-neutral-50 text-neutral-600'
+                            status === 'error' ? 'bg-red-50 text-red-700' : 'bg-neutral-50 text-neutral-600'
                             }`}>
                             <p className="font-medium">{message}</p>
                             {logs.length > 0 && (

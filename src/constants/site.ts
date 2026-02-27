@@ -34,7 +34,7 @@ export const NAV_LINKS = [
     { label: 'Productos', href: '/productos' },
     { label: 'Clases', href: '/clases' },
     { label: 'Experiencias', href: '/experiencias' },
-    { label: 'Sobre Mí', href: '/sobre-nosotros' },
+    { label: 'Sobre Mí', href: '/sobre-mi' },
 ] as const;
 
 export const FOOTER_LINKS = {
@@ -42,7 +42,7 @@ export const FOOTER_LINKS = {
         { label: 'Productos', href: '/productos' },
         { label: 'Clases', href: '/clases' },
         { label: 'Experiencias', href: '/experiencias' },
-        { label: 'Sobre Mí', href: '/sobre-nosotros' },
+        { label: 'Sobre Mí', href: '/sobre-mi' },
         { label: 'Contacto', href: '#contacto' },
     ],
     legal: [

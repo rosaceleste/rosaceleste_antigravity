@@ -38,7 +38,7 @@ export default async function ProductsPage() {
         <main className="min-h-screen pt-32 pb-24">
             <Container>
                 <header className="flex flex-col gap-4 mb-16 text-center max-w-3xl mx-auto">
-                    <h1 className="text-4xl md:text-6xl font-bold text-[#2C5F5D] tracking-tight">
+                    <h1 className="text-4xl md:text-6xl font-serif font-bold text-[#2C5F5D] tracking-tight">
                         Catálogo de Productos
                     </h1>
                     <p className="text-lg text-muted-foreground leading-relaxed">

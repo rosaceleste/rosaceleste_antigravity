@@ -97,11 +97,11 @@ export const ShimmerButton = React.forwardRef<HTMLButtonElement, ShimmerButtonPr
 
       return (
         <Comp style={styleProps} className={baseClasses} ref={ref} {...props}>
-          {React.cloneElement(children as any, {
+          {React.cloneElement(children as React.ReactElement<{ children?: React.ReactNode }>, {
             children: (
               <>
                 {shimmerEffectElements}
-                {(children as any).props.children}
+                {(children as React.ReactElement<{ children?: React.ReactNode }>).props.children}
               </>
             ),
           })}

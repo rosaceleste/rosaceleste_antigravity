@@ -26,7 +26,8 @@ Eventos grupales y retiros de bienestar donde el tejido es el hilo conductor par
 - **Ubicación**: Guadalajara de Buga, Colombia
 
 ## Enlaces
-- [Inicio](https://rosaceleste.com)
-- [Catálogo](https://rosaceleste.com/productos)
-- [Clases](https://rosaceleste.com/clases)
-- [Experiencias](https://rosaceleste.com/experiencias)
+- [Inicio](https://rosaceleste.vercel.app/)
+- [Productos](https://rosaceleste.vercel.app/productos)
+- [Clases](https://rosaceleste.vercel.app/clases)
+- [Experiencias](https://rosaceleste.vercel.app/experiencias)
+- [Sobre mi](https://rosaceleste.vercel.app/sobre-nosotros)

@@ -2,9 +2,9 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X, MessageCircle } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { NAV_LINKS } from "@/constants/site";
-import { whatsappLinks } from "@/lib/whatsapp";
+
 import { motion, AnimatePresence } from "framer-motion";
 import posthog from 'posthog-js';
 
@@ -46,11 +46,7 @@ export function Navbar() {
         }
     };
 
-    const handleWhatsAppClick = (location: 'desktop' | 'mobile') => {
-        posthog.capture('whatsapp_nav_clicked', {
-            location,
-        });
-    };
+
 
     return (
         <nav
@@ -93,19 +89,7 @@ export function Navbar() {
                         ))}
                     </ul>
 
-                    {/* WhatsApp CTA (Desktop) */}
-                    <div className="hidden lg:flex items-center">
-                        <a
-                            href={whatsappLinks.general}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="group flex items-center gap-2 px-6 py-2.5 rounded-full border border-primary/20 text-primary text-sm font-medium transition-all duration-300 hover:bg-primary hover:text-primary-foreground hover:border-primary"
-                            onClick={() => handleWhatsAppClick('desktop')}
-                        >
-                            <MessageCircle className="w-4 h-4 transition-transform duration-300 group-hover:scale-110" />
-                            <span>Conectar</span>
-                        </a>
-                    </div>
+                    {/* Navigation Links remain, no WhatsApp CTA here */}
 
                     {/* Mobile Menu Button */}
                     <button
@@ -145,18 +129,7 @@ export function Navbar() {
                                         </Link>
                                     </li>
                                 ))}
-                                <li className="pt-4 mt-2 border-t border-black/5">
-                                    <a
-                                        href={whatsappLinks.general}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex items-center justify-center gap-2 w-full px-6 py-3 rounded-full bg-primary text-primary-foreground font-medium transition-all active:scale-95"
-                                        onClick={() => handleWhatsAppClick('mobile')}
-                                    >
-                                        <MessageCircle className="w-4 h-4" />
-                                        <span>Conectar por WhatsApp</span>
-                                    </a>
-                                </li>
+                                {/* Mobile Menu no longer has the internal WhatsApp CTA */}
                             </ul>
                         </motion.div>
                     )}

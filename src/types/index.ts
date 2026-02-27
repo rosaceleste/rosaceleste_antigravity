@@ -34,7 +34,8 @@ export interface Lead {
 
 export interface Testimonial {
     id: string;
-    student_name: string;
+    name: string;
+    role?: string;
     content: string;
     image_url?: string;
     rating: number;

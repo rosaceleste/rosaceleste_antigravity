@@ -9,7 +9,7 @@ export async function TestimonialsSection() {
         .order('created_at', { ascending: false });
 
     return (
-        <section className="py-24 md:py-32 bg-background overflow-hidden">
+        <section className="py-24 md:py-32 bg-secondary overflow-hidden">
             <div className="max-w-7xl mx-auto px-6 mb-16 text-center">
                 <span className="text-primary text-xs uppercase tracking-[0.2em] mb-4 block">
                     Testimonios

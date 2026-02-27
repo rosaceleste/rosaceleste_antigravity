@@ -1,11 +1,11 @@
 'use client'
 
 import React, { useState } from "react";
-import Link from "next/link";
-import { ChevronDown, ExternalLink, ArrowRight } from "lucide-react";
+import { ChevronDown, ArrowRight } from "lucide-react";
 import { PRODUCT_CATEGORIES } from "@/constants/site";
 import { whatsappLinks } from "@/lib/whatsapp";
 import { motion, AnimatePresence } from "framer-motion";
+import { Button } from "@/components/ui/button";
 import { JoinCommunityForm } from "@/components/JoinCommunityForm";
 
 export function NarrativeSection() {
@@ -26,7 +26,7 @@ export function NarrativeSection() {
                     transition={{ duration: 0.6 }}
                     className="text-center mb-16 md:mb-24"
                 >
-                    <span className="text-accent text-xs uppercase tracking-[0.2em] mb-4 block">
+                    <span className="text-accent text-xs uppercase tracking-[0.3em] font-semibold mb-4 block">
                         Filosofía Rosaceleste
                     </span>
                     <h2 className="font-serif text-3xl md:text-5xl lg:text-5xl text-foreground mb-6 leading-tight max-w-4xl mx-auto">
@@ -61,16 +61,22 @@ export function NarrativeSection() {
                         </div>
 
                         {/* CTA Button */}
-                        <a
-                            href={whatsappLinks.booking}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="group inline-flex items-center gap-3 px-8 py-4 rounded-full bg-foreground text-background transition-all duration-300 hover:bg-accent hover:shadow-lg hover:-translate-y-1"
-                            aria-label="Reservar clase de macramé por WhatsApp"
+                        <Button
+                            asChild
+                            variant="default"
+                            size="lg"
+                            className="px-10 py-7 h-auto"
                         >
-                            <span className="text-sm font-medium tracking-widest uppercase">Reservar mi clase</span>
-                            <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-                        </a>
+                            <a
+                                href={whatsappLinks.booking}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="Reservar clase de macramé por WhatsApp"
+                            >
+                                <span className="text-sm font-medium tracking-widest uppercase">Reservar mi clase</span>
+                                <ArrowRight className="w-4 h-4 ml-2" />
+                            </a>
+                        </Button>
                     </motion.div>
 
                     {/* Right Column: Accordion Categories */}
@@ -156,7 +162,7 @@ export function NarrativeSection() {
 
                     <div className="relative z-10 grid grid-cols-1 lg:grid-cols-3 gap-10 items-center">
                         <div className="lg:col-span-2">
-                            <span className="text-primary text-xs uppercase tracking-[0.2em] mb-4 block">
+                            <span className="text-accent text-xs uppercase tracking-[0.3em] font-semibold mb-4 block">
                                 Online
                             </span>
                             <h3 className="font-serif text-3xl md:text-4xl text-foreground mb-6">
@@ -169,10 +175,13 @@ export function NarrativeSection() {
 
                         <div className="lg:col-span-1 flex justify-start lg:justify-end">
                             <JoinCommunityForm>
-                                <button className="group inline-flex items-center gap-3 px-8 py-4 rounded-full border border-foreground text-foreground transition-all duration-300 hover:bg-foreground hover:text-background">
-                                    <span className="text-sm font-medium tracking-widest uppercase">Unirme a la comunidad</span>
-                                    <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-                                </button>
+                                <Button
+                                    variant="secondary"
+                                    className="px-10 py-7 h-auto w-full sm:w-auto justify-center"
+                                >
+                                    <span className="text-sm font-semibold tracking-widest uppercase">Unirme a la comunidad</span>
+                                    <ArrowRight className="w-5 h-5 ml-2" />
+                                </Button>
                             </JoinCommunityForm>
                         </div>
                     </div>

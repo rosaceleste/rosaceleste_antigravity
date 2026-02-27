@@ -33,7 +33,8 @@ export const MOCK_PRODUCTS: Partial<Product>[] = [
 export const MOCK_TESTIMONIALS: Testimonial[] = [
     {
         id: '1',
-        student_name: 'María García',
+        name: 'María García',
+        role: 'Alumna', // Added role to satisfy type
         content: 'Las clases de Daniela son un viaje de ida. No solo aprendí la técnica, sino que encontré un espacio de meditación activa increíble.',
         rating: 5,
         is_featured: true,
@@ -41,7 +42,8 @@ export const MOCK_TESTIMONIALS: Testimonial[] = [
     },
     {
         id: '2',
-        student_name: 'Lucía Pérez',
+        name: 'Lucía Pérez',
+        role: 'Cliente', // Added role
         content: 'El tapiz que compré para mi living transformó totalmente el ambiente. Se nota el amor y la dedicación en cada nudo.',
         rating: 5,
         is_featured: true,

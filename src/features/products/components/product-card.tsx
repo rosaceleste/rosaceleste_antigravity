@@ -1,6 +1,8 @@
 'use client'
 
-import { Card, Button } from '@heroui/react'
+import { Card, CardFooter } from '@/components/ui/card'
+import { Button } from '@/components/ui/button'
+import { Badge } from '@/components/ui/badge'
 import { Product } from '@/types'
 import Link from 'next/link'
 import { OptimizedImage } from '@/components/ui/optimized-image'
@@ -29,16 +31,15 @@ export function ProductCard({ product }: ProductCardProps) {
     };
 
     return (
-        <Card className="border-none bg-card shadow-sm hover:shadow-md transition-shadow rounded-xl h-full flex flex-col group">
-            {/* v3 naming */}
-            <Card.Content className="p-0 overflow-hidden relative flex-none">
+        <Card className="border border-border/40 bg-card shadow-sm hover:shadow-md transition-all duration-300 rounded-xl h-full flex flex-col group overflow-hidden">
+            <div className="p-0 overflow-hidden relative flex-none">
                 <Link href={`/productos/${product.slug}`} className="block relative aspect-[4/5] bg-neutral-100">
                     {imageUrl ? (
                         <OptimizedImage
                             src={imageUrl}
                             alt={product.name}
                             fill
-                            className="object-cover group-hover:scale-105 transition-transform duration-500"
+                            className="object-cover group-hover:scale-105 transition-transform duration-700"
                             fallback={
                                 <div className="w-full h-full flex items-center justify-center">
                                     <div className="text-center text-neutral-400 p-4">
@@ -83,42 +84,55 @@ export function ProductCard({ product }: ProductCardProps) {
                         </div>
                     )}
                     {product.is_featured && (
-                        <span className="absolute top-4 right-4 bg-primary text-primary-foreground text-[10px] uppercase font-bold px-2 py-1 rounded-full z-10">
+                        <Badge variant="accent" className="absolute top-4 right-4 z-10 font-bold tracking-tight px-3">
                             Popular
-                        </span>
+                        </Badge>
                     )}
                 </Link>
-            </Card.Content>
-            {/* v3 naming */}
-            <Card.Footer className="flex flex-col items-start p-4 gap-1 flex-grow justify-end">
-                <p className="text-[10px] text-muted uppercase tracking-widest font-bold">
+            </div>
+
+            <CardFooter className="flex flex-col items-start p-6 gap-1 flex-grow justify-end">
+                <p className="text-[10px] text-primary/60 uppercase tracking-[0.2em] font-bold">
                     {product.category?.replace(/_/g, ' ')}
                 </p>
                 <Link href={`/productos/${product.slug}`} className="block group-hover:text-primary transition-colors">
-                    <h3 className="text-lg font-semibold text-foreground leading-tight line-clamp-2">{product.name}</h3>
+                    <h3 className="text-xl font-serif text-foreground leading-tight line-clamp-2">{product.name}</h3>
                 </Link>
                 {product.description && (
-                    <p className="text-xs text-muted-foreground line-clamp-2 mt-1">{product.description}</p>
+                    <p className="text-sm text-muted-foreground line-clamp-2 mt-1 font-light">{product.description}</p>
                 )}
-                <p className="text-primary font-bold mt-1">
+                <p className="text-primary font-bold mt-2 text-lg">
                     ${product.price.toLocaleString('es-CO')} COP
                 </p>
-                <a
-                    href={`https://wa.me/573017870521?text=${encodeURIComponent(`Hola! Me interesa la pieza "${product.name}" de $${product.price.toLocaleString('es-CO')} COP.`)}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block w-full mt-3"
-                    onClick={handleWhatsAppClick}
-                >
+                <div className="flex flex-col gap-2 w-full mt-4">
                     <Button
-                        className="w-full bg-primary text-primary-foreground font-medium text-xs rounded-full"
+                        asChild
+                        variant="secondary"
+                        className="w-full font-semibold bg-secondary text-primary hover:bg-secondary/90 rounded-full shadow-sm"
                         size="sm"
                     >
-                        <MessageCircle className="w-3 h-3 mr-1" />
-                        Comprar
+                        <Link href={`/productos/${product.slug}`}>
+                            Ver detalle
+                        </Link>
                     </Button>
-                </a>
-            </Card.Footer>
+                    <a
+                        href={`https://wa.me/573017870521?text=${encodeURIComponent(`Hola! Me interesa la pieza "${product.name}" de $${product.price.toLocaleString('es-CO')} COP.`)}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block w-full"
+                        onClick={handleWhatsAppClick}
+                    >
+                        <Button
+                            variant="default"
+                            className="w-full font-medium bg-primary text-primary-foreground hover:shadow-lg hover:-translate-y-0.5 transition-all rounded-full"
+                            size="sm"
+                        >
+                            <MessageCircle className="w-4 h-4 mr-2" />
+                            Comprar ahora
+                        </Button>
+                    </a>
+                </div>
+            </CardFooter>
         </Card>
     )
 }

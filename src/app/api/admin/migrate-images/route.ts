@@ -44,8 +44,6 @@ export async function POST() {
         errors: [] as { slug: string; error: string }[],
     }
 
-    const baseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!
-
     for (const product of products ?? []) {
         if (!product.image_url || product.image_url.length === 0) {
             results.skipped++
