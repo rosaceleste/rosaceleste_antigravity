@@ -56,14 +56,14 @@ export function GiftVideoBanner() {
         <>
             {/* BANNER */}
             <AnimatePresence>
-                {isVisible && (
+                {isVisible && !isModalOpen && (
                     <motion.div
                         initial={{ opacity: 0, y: 40 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: 40 }}
                         transition={{ type: 'spring', stiffness: 300, damping: 30 }}
                         className="
-              fixed bottom-28 left-4 z-40
+              fixed bottom-28 left-4 z-30
               w-[calc(100vw-2rem)] max-w-xs
               bg-[#F5F1E8] border border-[rgba(0,0,0,0.1)]
               rounded-xl shadow-xl p-4
