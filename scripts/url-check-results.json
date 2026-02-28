@@ -1,0 +1,285 @@
+{
+  "productUrlChecks": [
+    {
+      "name": "Espejo Mandala",
+      "slug": "espejo-mandala",
+      "url": "products/espejo-mandala-1.jpg",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "name": "Tapiz Montaña",
+      "slug": "tapiz-montana",
+      "url": "products/tapiz-montana-1.jpg",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "name": "Individual rectangular",
+      "slug": "individual-rectangular",
+      "url": "products/individual-rectangular-1.jpg",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "name": "Tote bag",
+      "slug": "tote-bag",
+      "url": "products/tote-bag-1.jpg",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "name": "Telar mural Zen",
+      "slug": "telar-mural-zen",
+      "url": "products/telar-mural-zen-1.jpg",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "name": "Portavasos corazón",
+      "slug": "portavasos-corazon",
+      "url": "products/portavasos-corazon-1.jpg",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "name": "Bolso Capri",
+      "slug": "bolso-capri",
+      "url": "products/bolso-capri-1.jpg",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "name": "Telar Raíces",
+      "slug": "telar-raices",
+      "url": "products/telar-raices-1.jpg",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "name": "Hamaca Verano",
+      "slug": "hamaca-verano",
+      "url": "products/hamaca-verano-1.jpg",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "name": "Llavero de corazón",
+      "slug": "llavero-de-corazon",
+      "url": "products/llavero-de-corazon-1.jpg",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "name": "Telar Noche",
+      "slug": "telar-noche",
+      "url": "products/telar-noche-1.jpg",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "name": "Cojín granito",
+      "slug": "cojin-granito",
+      "url": "products/cojin-granito-1.jpg",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "name": "Lámpara extensión de luz",
+      "slug": "lampara-extension-de-luz",
+      "url": "products/lampara-extension-de-luz-1.jpg",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "name": "Tapiz de hojas",
+      "slug": "tapiz-de-hojas",
+      "url": "products/tapiz-de-hojas-1.jpg",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "name": "Individuales redondos",
+      "slug": "individuales-redondos",
+      "url": "products/individuales-redondos-1.jpg",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "name": "Cojín rombos",
+      "slug": "cojin-rombos",
+      "url": "products/cojin-rombos-1.jpg",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "name": "Portavasos",
+      "slug": "portavasos",
+      "url": "products/portavasos-1.jpg",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "name": "Cojín red",
+      "slug": "cojin-red",
+      "url": "products/cojin-red-1.jpg",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "name": "Telar Ancestral",
+      "slug": "telar-ancestral",
+      "url": "products/telar-ancestral-1.jpg",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "name": "Atrapasueños orbital",
+      "slug": "atrapasuenos-orbital",
+      "url": "products/atrapasuenos-orbital-1.jpg",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "name": "Tapiz de hojas con tejido",
+      "slug": "tapiz-de-hojas-con-tejido",
+      "url": "products/tapiz-de-hojas-con-tejido-1.jpg",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "name": "Tapiz Majestad",
+      "slug": "tapiz-majestad",
+      "url": "products/tapiz-majestad-1.jpg",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "name": "Tapiz de plumas con fondo",
+      "slug": "tapiz-de-plumas-con-fondo",
+      "url": "products/tapiz-de-plumas-con-fondo-1.jpg",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "name": "Bolso Horus",
+      "slug": "bolso-horus",
+      "url": "products/bolso-horus-1.jpg",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "name": "Camino de mesa tierra",
+      "slug": "camino-de-mesa-tierra",
+      "url": "products/camino-de-mesa-tierra-1.jpg",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "name": "Atrapasueños Arcoiris",
+      "slug": "atrapasuenos-arcoiris",
+      "url": "products/atrapasuenos-arcoiris-1.jpg",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "name": "Bolso Maxi",
+      "slug": "bolso-maxi",
+      "url": "products/bolso-maxi-1.jpg",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "name": "Colgante para plantas Suspiro",
+      "slug": "colgante-para-plantas-suspiro",
+      "url": "products/colgante-para-plantas-suspiro-1.jpg",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "name": "Espejo Fragment",
+      "slug": "espejo-fragment",
+      "url": "products/espejo-fragment-1.jpg",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "name": "Estructura para matera",
+      "slug": "estructura-para-matera",
+      "url": "products/estructura-para-matera-1.jpg",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "name": "Llavero nudo cuadrado",
+      "slug": "llavero-nudo-cuadrado",
+      "url": "products/llavero-nudo-cuadrado-1.jpg",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "name": "Olas del mar",
+      "slug": "olas-del-mar",
+      "url": "products/olas-del-mar-1.jpg",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "name": "Repisa Diamantis",
+      "slug": "repisa-diamantis",
+      "url": "products/repisa-diamantis-1.jpg",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "name": "Telar Luz",
+      "slug": "telar-luz",
+      "url": "products/telar-luz-1.jpg",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "name": "Telar Brisa",
+      "slug": "telar-brisa",
+      "url": "products/telar-brisa-1.jpg",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "name": "Chalecos",
+      "slug": "chalecos",
+      "url": "products/chalecos-1.jpg",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "name": "Individuales redondos ancestral",
+      "slug": "individuales-redondos-ancestral",
+      "url": "products/individuales-redondos-ancestral-1.jpg",
+      "status": 200,
+      "ok": true
+    }
+  ],
+  "localFileChecks": [
+    {
+      "url": "/products/chalecos-1.jpg",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "url": "/products/tapiz-montana-1.jpg",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "url": "/products/portavasos-corazon-1.jpg",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "url": "/products/individuales-redondos-ancestral-1.jpg",
+      "status": 200,
+      "ok": true
+    }
+  ]
+}

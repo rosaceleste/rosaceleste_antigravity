@@ -1,0 +1,36 @@
+{
+  "rootFiles": [],
+  "sampleUrls": [
+    {
+      "name": "Espejo Mandala",
+      "slug": "espejo-mandala",
+      "url": "https://erqgcpwmulrxlfmzsffi.supabase.co/storage/v1/object/public/products/espejo-mandala-1.jpg"
+    },
+    {
+      "name": "Tapiz Montaña",
+      "slug": "tapiz-montana",
+      "url": "https://erqgcpwmulrxlfmzsffi.supabase.co/storage/v1/object/public/products/tapiz-montana-1.jpg"
+    },
+    {
+      "name": "Individual rectangular",
+      "slug": "individual-rectangular",
+      "url": "https://erqgcpwmulrxlfmzsffi.supabase.co/storage/v1/object/public/products/individual-rectangular-1.jpg"
+    },
+    {
+      "name": "Tote bag",
+      "slug": "tote-bag",
+      "url": "https://erqgcpwmulrxlfmzsffi.supabase.co/storage/v1/object/public/products/tote-bag-1.jpg"
+    },
+    {
+      "name": "Telar mural Zen",
+      "slug": "telar-mural-zen",
+      "url": "https://erqgcpwmulrxlfmzsffi.supabase.co/storage/v1/object/public/products/telar-mural-zen-1.jpg"
+    }
+  ],
+  "testUrlStatus": {
+    "url": "https://erqgcpwmulrxlfmzsffi.supabase.co/storage/v1/object/public/products/espejo-mandala-1.jpg",
+    "ok": true,
+    "status": 200
+  },
+  "productsFolderFiles": []
+}
