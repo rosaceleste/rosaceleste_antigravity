@@ -13,8 +13,16 @@ interface ProductCardProps {
     product: Product
 }
 
+// Override map: real JPEG files served from /public/products/
+const LOCAL_IMAGE_OVERRIDES: Record<string, string> = {
+    'chalecos': '/products/chalecos-1.jpg',
+    'portavasos-corazon': '/products/portavasos-corazon-1.jpg',
+    'tapiz-montana': '/products/tapiz-montana-1.jpg',
+    'individuales-redondos-ancestral': '/products/individuales-redondos-ancestral-1.jpg',
+}
+
 export function ProductCard({ product }: ProductCardProps) {
-    const imageUrl = product.image_url?.[0]
+    const imageUrl = LOCAL_IMAGE_OVERRIDES[product.slug] ?? product.image_url?.[0]
 
     const handleWhatsAppClick = (e: React.MouseEvent) => {
         e.stopPropagation();
