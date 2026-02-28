@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { NAV_LINKS } from "@/constants/site";
 
-import { motion, AnimatePresence } from "framer-motion";
+
 
 export function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -104,35 +104,28 @@ export function Navbar() {
                     </button>
                 </div>
 
-                {/* Mobile Menu Overlay */}
-                <AnimatePresence>
-                    {isMobileMenuOpen && (
-                        <motion.div
-                            initial={{ opacity: 0, y: -20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            exit={{ opacity: 0, y: -20 }}
-                            className="lg:hidden absolute top-full left-0 right-0 bg-white/95 backdrop-blur-xl border-b border-black/5 shadow-sm"
-                        >
-                            <ul className="flex flex-col py-6 px-6 gap-2">
-                                {NAV_LINKS.map((link) => (
-                                    <li key={link.href}>
-                                        <Link
-                                            href={link.href}
-                                            onClick={(e) => handleSmoothScroll(e, link.href)}
-                                            className={`block px-4 py-3 text-sm uppercase tracking-widest transition-colors rounded-lg ${activeSection === link.href
-                                                ? 'text-[#2C5F5D] bg-[#2C5F5D]/5 font-medium'
-                                                : 'text-[#4A4A4A] hover:bg-black/5'
-                                                }`}
-                                        >
-                                            {link.label}
-                                        </Link>
-                                    </li>
-                                ))}
-                                {/* Mobile Menu no longer has the internal WhatsApp CTA */}
-                            </ul>
-                        </motion.div>
-                    )}
-                </AnimatePresence>
+                {/* Mobile Menu Overlay — CSS transition (no framer-motion) */}
+                <div
+                    className={`lg:hidden absolute top-full left-0 right-0 bg-white/95 backdrop-blur-xl border-b border-black/5 shadow-sm transition-all duration-300 ease-in-out overflow-hidden ${isMobileMenuOpen ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 -translate-y-2 pointer-events-none'
+                        }`}
+                >
+                    <ul className="flex flex-col py-6 px-6 gap-2">
+                        {NAV_LINKS.map((link) => (
+                            <li key={link.href}>
+                                <Link
+                                    href={link.href}
+                                    onClick={(e) => handleSmoothScroll(e, link.href)}
+                                    className={`block px-4 py-3 text-sm uppercase tracking-widest transition-colors rounded-lg ${activeSection === link.href
+                                            ? 'text-[#2C5F5D] bg-[#2C5F5D]/5 font-medium'
+                                            : 'text-[#4A4A4A] hover:bg-black/5'
+                                        }`}
+                                >
+                                    {link.label}
+                                </Link>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
             </div>
         </nav>
     );
